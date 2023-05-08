@@ -112,8 +112,8 @@
                         <td><?php echo $i++; ?></td>
                         <td><?php echo $user['Number']; ?></td>
                         <td><?php echo $user['ProductionOrderName']; ?></td>
-                        <td><?php echo $user['MachineID']; ?></td>
-                        <td><?php echo $user['Squence']; ?></td>
+                        <td><?php echo $user['MachineType']; ?></td>
+                        <td><?php echo $user['Sequence']; ?></td>
                         <td><?php echo $user['OperationMode']; ?></td>
                         <td><?php echo $user['QualityOfBanknote']; ?></td>
 
