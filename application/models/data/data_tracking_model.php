@@ -34,6 +34,9 @@ class Data_tracking_model extends CI_Model
 
   public function get_users($limit, $start, $search = NULL)
   {
+    if ($search == NULL) {
+      return [];
+    }
     $this->db->select('a.id, a.nip,a.no_wa, a.username, a.category, a.fullname, a.email, b.position_name, c.role_name, a.verified_wa, a.signature');
     $this->db->from('mst_users a');
     $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
