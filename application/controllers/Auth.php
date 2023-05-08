@@ -32,7 +32,7 @@ class Auth extends CI_Controller
         $data['captcha'] = null;
       }
 
-      $this->load->view('login', $data);
+      $this->load->view('logins', $data);
     } else {
       $captcha_input = $this->input->post('captcha');
       $captcha_word = $this->session->userdata('captcha_word');
