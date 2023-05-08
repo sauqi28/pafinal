@@ -20,53 +20,64 @@ class Auth extends CI_Controller
     // $this->session->sess_destroy();
     $this->form_validation->set_rules('email', 'Email', 'required');
     $this->form_validation->set_rules('password', 'Password', 'required');
-    //$this->form_validation->set_rules('captcha', 'Captcha', 'required'); // <-- comment ini
+    $this->form_validation->set_rules('captcha', 'Captcha', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      // $cap = $this->create_captcha();
-      // if ($cap) {
-      //   $data['captcha'] = $cap['image'];
-      // }
-      //$this->load->view('login', $data); // <-- comment ini
-      $this->load->view('login'); // <-- tambahkan ini
+      $cap = $this->create_captcha();
+      $data['captcha'] = $cap['image'];
+      $this->load->view('login', $data);
     } else {
-      // $captcha_input = $this->input->post('captcha');
-      // $captcha_word = $this->session->userdata('captcha_word');
-      //
-      // if ($captcha_input == $captcha_word) { // <-- comment ini
-      $email = $this->input->post('email');
-      $password = $this->input->post('password');
-      $user = $this->User_model->check_user($email);
-      if ($user) {
-        if (password_verify($password, $user->password)) {
-          $userdata = array(
-            'user_id' => $user->id,
-            'username' => $user->username,
-            'fullname' => $user->fullname,
-            'email' => $user->email,
-            'role' => $user->role_name,
-            'position' => $user->position_name,
-            'category' => $user->category,
-            'logged_in' => TRUE
-          );
+      $captcha_input = $this->input->post('captcha');
+      $captcha_word = $this->session->userdata('captcha_word');
 
-          $this->session->set_userdata($userdata);
-          redirect(base_url('dashboard'));
+      if ($captcha_input == $captcha_word) {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $user = $this->User_model->check_user($email);
+        // var_dump($user);
+        // exit();
+        if ($user) {
+          // // Dump informasi user di sini
+          // echo "<pre>";
+          // var_dump($user);
+          // echo "</pre>";
+          // exit; // Hentikan eksekusi lebih lanjut setelah menampilkan informasi user
+
+          if (password_verify($password, $user->password)) {
+            $userdata = array(
+              'user_id' => $user->id,
+              'username' => $user->username,
+              'fullname' => $user->fullname,
+              'email' => $user->email,
+              'role' => $user->role_name,
+              'position' => $user->position_name,
+              'category' => $user->category,
+              'logged_in' => TRUE
+            );
+
+            $this->session->set_userdata($userdata);
+            // $this->session->set_flashdata('hapus', 'Berhasil dihapus');
+
+            // var_dump($this->session->flashdata());
+            // var_dump($this->session->userdata());
+            // exit();
+
+            //var_dump($this->session->userdata('email'));
+            redirect(base_url('dashboard'));
+          } else {
+            $this->session->set_flashdata('error', 'Invalid Password');
+            redirect('auth/login');
+          }
         } else {
-          $this->session->set_flashdata('error', 'Invalid Password');
+          $this->session->set_flashdata('error', 'Invalid Email');
           redirect('auth/login');
         }
       } else {
-        $this->session->set_flashdata('error', 'Invalid Email');
+        $this->session->set_flashdata('error', 'Captcha tidak cocok');
         redirect('auth/login');
       }
-      // } else {
-      //   $this->session->set_flashdata('error', 'Captcha tidak cocok');
-      //   redirect('auth/login');
-      // }
     }
   }
-
 
   public function register()
   {
@@ -97,37 +108,63 @@ class Auth extends CI_Controller
     if ($this->is_logged_in()) {
       redirect('dashboard');
     }
-
+    // $this->session->sess_destroy();
     $this->form_validation->set_rules('email', 'Email', 'required');
     $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('captcha', 'Captcha', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-      $this->load->view('login');
+      $cap = $this->create_captcha();
+      $data['captcha'] = $cap['image'];
+      $this->load->view('login', $data);
     } else {
-      $email = $this->input->post('email');
-      $password = $this->input->post('password');
-      $user = $this->User_model->check_user($email);
-      if ($user) {
-        if (password_verify($password, $user->password)) {
-          $userdata = array(
-            'user_id' => $user->id,
-            'username' => $user->username,
-            'fullname' => $user->fullname,
-            'email' => $user->email,
-            'role' => $user->role_name,
-            'position' => $user->position_name,
-            'category' => $user->category,
-            'logged_in' => TRUE
-          );
+      $captcha_input = $this->input->post('captcha');
+      $captcha_word = $this->session->userdata('captcha_word');
 
-          $this->session->set_userdata($userdata);
-          redirect(base_url('dashboard'));
+      if ($captcha_input == $captcha_word) {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $user = $this->User_model->check_user($email);
+        // var_dump($user);
+        // exit();
+        if ($user) {
+          // // Dump informasi user di sini
+          // echo "<pre>";
+          // var_dump($user);
+          // echo "</pre>";
+          // exit; // Hentikan eksekusi lebih lanjut setelah menampilkan informasi user
+
+          if (password_verify($password, $user->password)) {
+            $userdata = array(
+              'user_id' => $user->id,
+              'username' => $user->username,
+              'fullname' => $user->fullname,
+              'email' => $user->email,
+              'role' => $user->role_name,
+              'position' => $user->position_name,
+              'category' => $user->category,
+              'logged_in' => TRUE
+            );
+
+            $this->session->set_userdata($userdata);
+            // $this->session->set_flashdata('hapus', 'Berhasil dihapus');
+
+            // var_dump($this->session->flashdata());
+            // var_dump($this->session->userdata());
+            // exit();
+
+            //var_dump($this->session->userdata('email'));
+            redirect(base_url('dashboard'));
+          } else {
+            $this->session->set_flashdata('error', 'Invalid Password');
+            redirect('auth/login');
+          }
         } else {
-          $this->session->set_flashdata('error', 'Invalid Password');
+          $this->session->set_flashdata('error', 'Invalid Email');
           redirect('auth/login');
         }
       } else {
-        $this->session->set_flashdata('error', 'Invalid Email');
+        $this->session->set_flashdata('error', 'Captcha tidak cocok');
         redirect('auth/login');
       }
     }
