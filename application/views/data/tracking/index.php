@@ -96,12 +96,12 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>NIP/Username</th>
-                      <th>Nama</th>
-                      <th>Posisi/Jabatan</th>
-                      <th>Role</th>
-                      <th>Verified</th>
-                      <th>Signature</th>
+                      <th>Number</th>
+                      <th>ProductionOrder</th>
+                      <th>MachineID</th>
+                      <th>Squence</th>
+                      <th>OperationMode</th>
+                      <th>Quality</th>
                       <th class="text-end">Action</th>
                     </tr>
                   </thead>
@@ -110,48 +110,12 @@
                     foreach ($users as $user) : ?>
                       <tr>
                         <td><?php echo $i++; ?></td>
-                        <td><?php echo $user['nip'] . "/" . $user['username']; ?></td>
-                        <td><?php echo $user['fullname']; ?></td>
-                        <td><?php echo $user['position_name']; ?></td>
-                        <td><span class="badge badge-soft-success"><?php echo $user['role_name']; ?></span></td>
-                        <td>
-                          <button type="button" class="btn btn-soft-<?php echo ($user['verified_wa'] == 0) ? 'danger' : 'success'; ?> btn-icon-circle btn-icon-circle-sm me-2 position-relative" onclick="<?php echo ($user['verified_wa'] == 0) ? 'confirmVerifyUser(' . $user['no_wa'] . ', ' . $user['id'] . ')' : 'confirmResendVerifyUser(' . $user['no_wa'] . ', ' . $user['id'] . ')'; ?>">
-                            <?php echo ($user['verified_wa'] == 0) ? '<i class="fas fa-exclamation"></i>' : '<i class="mdi mdi-checkbox-marked-circle-outline"></i>'; ?>
-                            <span class="badge badge-dot online d-flex align-items-center position-absolute end-0 top-50"></span>
-                          </button>
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-soft-<?php echo ($user['signature'] == NULL) ? 'danger' : 'success'; ?> btn-icon-circle btn-icon-circle-sm me-2 position-relative" onclick="<?php echo ($user['signature'] == NULL) ? 'confirmVerifySignature(' . $user['no_wa'] . ', ' . $user['id'] . ')' : 'confirmResendVerifySignature(' . $user['no_wa'] . ', ' . $user['id'] . ')'; ?>">
-                            <?php echo ($user['signature'] == NULL) ? '<i class="fas fa-exclamation"></i>' : '<i class="mdi mdi-checkbox-marked-circle-outline"></i>'; ?>
-                            <span class="badge badge-dot online d-flex align-items-center position-absolute end-0 top-50"></span>
-                          </button>
-                        </td>
-                        <script>
-                          function confirmVerifyUser(no_wa, id) {
-                            if (confirm('Apakah Anda yakin ingin memverifikasi pengguna ini? Jika Iya, user akan menerima Link WhatsApp untuk verifikasi nomor wa.')) {
-                              verify_user(no_wa, id);
-                            }
-                          }
-
-                          function confirmVerifySignature(no_wa, id) {
-                            if (confirm('Apakah Anda yakin ingin memverifikasi tanda tangan pengguna ini? Jika Iya, user akan menerima Link WhatsApp untuk pengambilan E-signature')) {
-                              verify_signature(no_wa, id);
-                            }
-                          }
-
-                          function confirmResendVerifyUser(no_wa, id) {
-                            if (confirm('Apakah Anda yakin ingin mengirim ulang verifikasi nomor wa ke pengguna ini?')) {
-                              verify_user(no_wa, id);
-                            }
-                          }
-
-                          function confirmResendVerifySignature(no_wa, id) {
-                            if (confirm('Apakah Anda yakin ingin mengirim ulang verifikasi tanda tangan ke pengguna ini?')) {
-                              verify_signature(no_wa, id);
-                            }
-                          }
-                        </script>
-
+                        <td><?php echo $user['Number']; ?></td>
+                        <td><?php echo $user['ProductionOrderName']; ?></td>
+                        <td><?php echo $user['MachineID']; ?></td>
+                        <td><?php echo $user['Squence']; ?></td>
+                        <td><?php echo $user['OperationMode']; ?></td>
+                        <td><?php echo $user['QualityOfBanknote']; ?></td>
 
 
                         <td class="text-end">

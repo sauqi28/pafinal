@@ -18,13 +18,9 @@ class Data_tracking_model extends CI_Model
       return [];
     }
 
-    $this->db->select('a.*, b.position_name,v.vendor_name, c.role_name, cat.category_name');
-    $this->db->from('mst_users a');
-    $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-    $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-    $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
-    $this->db->join('mst_vendors v', 'a.vendor = v.id', 'left');
-    $this->db->where('a.id', $id);
+    $this->db->select('*');
+    $this->db->from('tb_sn');
+    $this->db->where('Number', $id);
     $query = $this->db->get();
     $user_additional_info = $query->row_array();
 
@@ -37,53 +33,18 @@ class Data_tracking_model extends CI_Model
     if ($search == NULL) {
       return [];
     }
-    $this->db->select('a.id, a.nip,a.no_wa, a.username, a.category, a.fullname, a.email, b.position_name, c.role_name, a.verified_wa, a.signature');
-    $this->db->from('mst_users a');
-    $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-    $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-    $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
+    $this->db->select('*');
+    $this->db->from('tb_sn');
 
     if ($search) {
-      $this->db->group_start();
-      $this->db->like('a.fullname', $search);
-      $this->db->or_like('a.email', $search);
-      $this->db->or_like('a.username', $search);
-      $this->db->or_like('a.nip', $search);
-      $this->db->or_like('b.position_name', $search);
-      $this->db->or_like('c.role_name', $search);
-      $this->db->or_like('cat.category_name', $search);
-      $this->db->group_end();
+      $this->db->where('Number', $search);
     }
-    $this->db->where('a.status', "active");
+
     $this->db->limit($limit, $start);
     $query = $this->db->get();
     return $query->result_array();
   }
 
-  public function get_users_nonaktif($limit, $start, $search = NULL)
-  {
-    $this->db->select('a.id, a.nip,a.no_wa, a.username, a.category, a.fullname, a.email, b.position_name, c.role_name, a.verified_wa, a.signature');
-    $this->db->from('mst_users a');
-    $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-    $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-    $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
-
-    if ($search) {
-      $this->db->group_start();
-      $this->db->like('a.fullname', $search);
-      $this->db->or_like('a.email', $search);
-      $this->db->or_like('a.username', $search);
-      $this->db->or_like('a.nip', $search);
-      $this->db->or_like('b.position_name', $search);
-      $this->db->or_like('c.role_name', $search);
-      $this->db->or_like('cat.category_name', $search);
-      $this->db->group_end();
-    }
-    $this->db->where('a.status', "inactive");
-    $this->db->limit($limit, $start);
-    $query = $this->db->get();
-    return $query->result_array();
-  }
 
 
   public function get_users_count($search = NULL)
@@ -91,21 +52,12 @@ class Data_tracking_model extends CI_Model
     if ($search == NULL) {
       return 0;
     } else {
-      $this->db->select('a.*');
-      $this->db->from('mst_users a');
-      $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-      $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-      $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
+      $this->db->select('*');
+      $this->db->from('tb_sn');
+
       if ($search) {
-        $this->db->like('a.fullname', $search);
-        $this->db->or_like('a.email', $search);
-        $this->db->or_like('a.username', $search);
-        $this->db->or_like('a.nip', $search);
-        $this->db->or_like('b.position_name', $search);
-        $this->db->or_like('c.role_name', $search);
-        $this->db->or_like('cat.category_name', $search);
+        $this->db->where('Number', $search);
       }
-      $this->db->where('a.status', "active");
       $query = $this->db->get();
       return $query->num_rows();
     }
