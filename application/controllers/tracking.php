@@ -14,9 +14,8 @@ class Tracking extends CI_Controller
 		$this->load->helper('url_helper');
 		$this->load->library('form_validation');
 		$this->load->library('pagination');
-		$this->load->library('Wa_api');
-		$this->title = "Master Data Pengguna";
-		$this->subtitle = "halaman untuk mengatur informasi pengguna, penyesuaian hak akses, serta pemeliharaan data anggota aplikasi.";
+		$this->title = "Tracking Data Serial Number";
+		$this->subtitle = "halaman untuk melakukan tracking data serial number";
 
 
 		if (!$this->session->userdata('logged_in')) {
