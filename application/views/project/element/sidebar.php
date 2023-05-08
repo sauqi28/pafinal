@@ -27,59 +27,24 @@
 
                      <!-- Navigation -->
                      <ul class="navbar-nav tab-pane active" id="Main" role="tabpanel">
-                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>engeluaran</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
+                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>encarian</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
                          <li class="nav-item">
                              <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
                                  <i class="ti ti-stack menu-icon"></i>
-                                 <span>Analytics</span>
+                                 <span>Tools</span>
                              </a>
                              <div class="collapse " id="sidebarAnalytics">
                                  <ul class="nav flex-column">
                                      <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Dashboard</a>
+                                         <a class="nav-link" href="<?php echo base_url('/tracking'); ?>">SN Tracking</a>
                                      </li><!--end nav-item-->
-                                     <li class="nav-item">
-                                         <a href="<?php echo base_url('/dashboard/report'); ?>" class="nav-link ">Report</a>
-                                     </li><!--end nav-item-->
+
 
                                  </ul><!--end nav-->
                              </div><!--end sidebarAnalytics-->
                          </li><!--end nav-item-->
-                         <li class="nav-item">
-                             <a class="nav-link" href="<?php echo base_url('data_reksis'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Reksis</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>SPK</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Reservasi</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Good Issue</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Surat Jalan</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Pemakaian Material</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Intracompany</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Retur</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Material Pinjam</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Material Retrofit</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#"><i class="ti ti-calendar menu-icon"></i><span>Laporan Gangguan</span></a>
-                         </li>
 
-
+                        <?php if ($this->session->userdata('role') == 'adminfull') { ?>
 
                          <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
                          <li class="nav-item">
@@ -164,6 +129,7 @@
                                  </ul><!--end nav-->
                              </div><!--end sidebarProjects-->
                          </li><!--end nav-item-->
+                      
                      <?php endif; ?>
                      </ul>
 
