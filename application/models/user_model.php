@@ -18,7 +18,7 @@ class User_model extends CI_Model
   // }
   public function check_user($username)
   {
-    $this->db->select('a.id, a.username, a.category, a.fullname, a.email, a.password, b.id as position_id, b.position_name, c.id as role_id, c.role_name, a.status');
+    $this->db->select('a.*');
     $this->db->from('mst_users a');
     $this->db->where("(a.username = '$username' OR a.nip = '$username' OR a.email = '$username')");
     $this->db->limit(1);
