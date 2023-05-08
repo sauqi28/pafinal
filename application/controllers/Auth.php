@@ -218,6 +218,8 @@ class Auth extends CI_Controller
       // Jika terjadi kesalahan, atur $cap ke NULL
       $cap = NULL;
     }
+    var_dump($cap);
+
 
     return $cap;
   }
