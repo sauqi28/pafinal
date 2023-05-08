@@ -25,7 +25,7 @@ class Tracking extends CI_Controller
 
 	// public function index()
 	// {
-	// 	$data['users'] = $this->Data_user_model->get_users();
+	// 	$data['users'] = $this->data_tracking_model->get_users();
 	// 	$this->load->view('data/tracking/index', $data);
 	// }
 
@@ -35,7 +35,7 @@ class Tracking extends CI_Controller
 		$search = $this->input->get('search');
 
 		$config['base_url'] = site_url('tracking/index');
-		$config['total_rows'] = $this->Data_user_model->get_users_count($search);
+		$config['total_rows'] = $this->data_tracking_model->get_users_count($search);
 		$config['per_page'] = 10;
 		$config['uri_segment'] = 3;
 		$config['reuse_query_string'] = TRUE;
@@ -61,7 +61,7 @@ class Tracking extends CI_Controller
 
 
 
-		$data['users'] = $this->Data_user_model->get_users($config['per_page'], $page, $search);
+		$data['users'] = $this->data_tracking_model->get_users($config['per_page'], $page, $search);
 		$data['pagination'] = $this->pagination->create_links();
 		$data['title'] = $this->title;
 		$data['subtitle'] = $this->subtitle;
@@ -76,7 +76,7 @@ class Tracking extends CI_Controller
 		$search = $this->input->get('search');
 
 		$config['base_url'] = site_url('data_user/index');
-		$config['total_rows'] = $this->Data_user_model->get_users_count_nonaktif($search);
+		$config['total_rows'] = $this->data_tracking_model->get_users_count_nonaktif($search);
 		$config['per_page'] = 10;
 		$config['uri_segment'] = 3;
 		$config['reuse_query_string'] = TRUE;
@@ -102,7 +102,7 @@ class Tracking extends CI_Controller
 
 
 
-		$data['users'] = $this->Data_user_model->get_users_nonaktif($config['per_page'], $page, $search);
+		$data['users'] = $this->data_tracking_model->get_users_nonaktif($config['per_page'], $page, $search);
 		$data['pagination'] = $this->pagination->create_links();
 		$data['title'] = $this->title;
 		$data['subtitle'] = $this->subtitle;
@@ -116,7 +116,7 @@ class Tracking extends CI_Controller
 
 	public function view($id = NULL)
 	{
-		$data['user'] = $this->Data_user_model->get_users_view($id);
+		$data['user'] = $this->data_tracking_model->get_users_view($id);
 		// var_dump($data);
 
 		if (empty($data['user'])) {
@@ -126,9 +126,9 @@ class Tracking extends CI_Controller
 		$data['title'] = $this->title;
 		$data['subtitle'] = $this->subtitle;
 		$data['navbar'] = "data_user_add";
-		$data['user_positions'] = $this->Data_user_model->get_all_positions();
-		$data['user_roles'] = $this->Data_user_model->get_all_roles();
-		$data['user_category'] = $this->Data_user_model->get_all_category();
+		$data['user_positions'] = $this->data_tracking_model->get_all_positions();
+		$data['user_roles'] = $this->data_tracking_model->get_all_roles();
+		$data['user_category'] = $this->data_tracking_model->get_all_category();
 		$this->load->view('data/tracking/view', $data);
 	}
 
@@ -147,12 +147,12 @@ class Tracking extends CI_Controller
 			$data['title'] = $this->title;
 			$data['subtitle'] = $this->subtitle;
 			$data['navbar'] = "data_user_add";
-			$data['user_positions'] = $this->Data_user_model->get_all_positions();
-			$data['user_roles'] = $this->Data_user_model->get_all_roles();
-			$data['user_category'] = $this->Data_user_model->get_all_category();
+			$data['user_positions'] = $this->data_tracking_model->get_all_positions();
+			$data['user_roles'] = $this->data_tracking_model->get_all_roles();
+			$data['user_category'] = $this->data_tracking_model->get_all_category();
 			$this->load->view('data/tracking/create', $data);
 		} else {
-			$this->Data_user_model->create_user();
+			$this->data_tracking_model->create_user();
 			$this->session->set_flashdata('message', 'User berhasil ditambahkan');
 			$this->session->set_flashdata('status', 'success');
 			redirect(base_url('data_user/index'));
@@ -164,7 +164,7 @@ class Tracking extends CI_Controller
 		// ambil data pilihan vendor dari database berdasarkan kategori user yang dipilih
 		$kategori = $this->input->post('kategori');
 		if ($kategori == 2) { // external
-			$vendor_options = $this->Data_user_model->get_vendor_options();
+			$vendor_options = $this->data_tracking_model->get_vendor_options();
 		} else {
 			$vendor_options = array();
 		}
@@ -176,7 +176,7 @@ class Tracking extends CI_Controller
 
 	public function edit($id)
 	{
-		$data['user'] = $this->Data_user_model->get_users_view($id);
+		$data['user'] = $this->data_tracking_model->get_users_view($id);
 
 		if (empty($data['user'])) {
 			show_404();
@@ -196,12 +196,12 @@ class Tracking extends CI_Controller
 			$data['title'] = $this->title;
 			$data['subtitle'] = $this->subtitle;
 			$data['navbar'] = "data_user_add";
-			$data['user_positions'] = $this->Data_user_model->get_all_positions();
-			$data['user_roles'] = $this->Data_user_model->get_all_roles();
-			$data['user_category'] = $this->Data_user_model->get_all_category();
+			$data['user_positions'] = $this->data_tracking_model->get_all_positions();
+			$data['user_roles'] = $this->data_tracking_model->get_all_roles();
+			$data['user_category'] = $this->data_tracking_model->get_all_category();
 			$this->load->view('data/tracking/edit', $data);
 		} else {
-			$this->Data_user_model->update_user($id);
+			$this->data_tracking_model->update_user($id);
 			$this->session->set_flashdata('message', 'User berhasil di update');
 			$this->session->set_flashdata('status', 'success');
 			//$res = $this->wa_api->send_message($this->input->post('no_wa'), "user anda sudah diupdate");
@@ -215,7 +215,7 @@ class Tracking extends CI_Controller
 
 		$no_wa = $this->input->post('no_wa');
 		$id = $this->input->post('id');
-		$data = $this->Data_user_model->get_user($id);
+		$data = $this->data_tracking_model->get_user($id);
 		$token = $this->generate_token(10);
 
 		// $pesan = "Verifikasi Wahtsapp, klik link berikut :\n" . base_url('publicaccess/whatsapp_verified/') . $token;
@@ -224,7 +224,7 @@ class Tracking extends CI_Controller
 
 		$res = $this->wa_api->send_message($data->no_wa, $pesan);
 		if ($res == 'success') {
-			$this->Data_user_model->insert_wa_token($id, $token);
+			$this->data_tracking_model->insert_wa_token($id, $token);
 			echo $res;
 		} else {
 			echo $res;
@@ -235,7 +235,7 @@ class Tracking extends CI_Controller
 	{
 		$no_wa = $this->input->post('no_wa');
 		$id = $this->input->post('id');
-		$data = $this->Data_user_model->get_user($id);
+		$data = $this->data_tracking_model->get_user($id);
 		$token = $this->generate_token(10);
 
 		// $pesan = "Verifikasi Wahtsapp, klik link berikut :\n" . base_url('publicaccess/whatsapp_verified/') . $token;
@@ -243,7 +243,7 @@ class Tracking extends CI_Controller
 
 		$res = $this->wa_api->send_message($data->no_wa, $pesan);
 		if ($res == 'success') {
-			$this->Data_user_model->insert_signature_token($id, $token);
+			$this->data_tracking_model->insert_signature_token($id, $token);
 			echo $res;
 		} else {
 			echo $res;
@@ -274,14 +274,14 @@ class Tracking extends CI_Controller
 		$id = $this->uri->segment(4);
 
 		if ($status == 1) {
-			$this->Data_user_model->update_status($id, 'inactive');
+			$this->data_tracking_model->update_status($id, 'inactive');
 			$message = 'Berhasil dinonaktifkan';
 
 			$this->session->set_flashdata('message', $message);
 			$this->session->set_flashdata('status', 'success');
 			redirect(base_url('data_user/index'), 'refresh');
 		} elseif ($status == 2) {
-			$this->Data_user_model->update_status($id, 'active');
+			$this->data_tracking_model->update_status($id, 'active');
 			$message = 'Berhasil diaktifkan';
 
 			$this->session->set_flashdata('message', $message);
