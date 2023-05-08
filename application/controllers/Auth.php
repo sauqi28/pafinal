@@ -24,6 +24,8 @@ class Auth extends CI_Controller
 
     if ($this->form_validation->run() === FALSE) {
       $cap = $this->create_captcha();
+      var_dump($cap);
+      exit(0);
       $data['captcha'] = $cap['image'];
       $this->load->view('login', $data);
     } else {
