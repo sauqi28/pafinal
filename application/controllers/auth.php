@@ -132,8 +132,8 @@ class Auth extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $user = $this->User_model->check_user($email);
-        var_dump($user);
-        exit();
+        // var_dump($user);
+        // exit();
         if ($user) {
           // // Dump informasi user di sini
           // echo "<pre>";
