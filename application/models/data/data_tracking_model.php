@@ -86,7 +86,7 @@ class Data_tracking_model extends CI_Model
   public function get_users_count($search = NULL)
   {
     if ($search === NULL) {
-      return [];
+      return 0;
     } else {
       $this->db->select('a.*');
       $this->db->from('mst_users a');
