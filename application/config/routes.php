@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -38,8 +38,9 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = 'auth/login';
 $route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
 
 
 /* End of file routes.php */
