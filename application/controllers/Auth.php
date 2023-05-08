@@ -25,7 +25,13 @@ class Auth extends CI_Controller
 
     if ($this->form_validation->run() === FALSE) {
       $cap = $this->create_captcha();
-      $data['captcha'] = $cap['image'];
+      // $data['captcha'] = $cap['image'];
+      if (isset($cap['image'])) {
+        $data['captcha'] = $cap['image'];
+      } else {
+        $data['captcha'] = null;
+      }
+
       $this->load->view('login', $data);
     } else {
       $captcha_input = $this->input->post('captcha');
@@ -188,6 +194,11 @@ class Auth extends CI_Controller
 
   private function create_captcha()
   {
+    if (!extension_loaded('gd')) {
+      echo 'GD extension is not loaded';
+      exit;
+    }
+
     $this->load->helper('captcha');
     $this->load->helper('string');
 
