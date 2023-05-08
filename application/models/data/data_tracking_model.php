@@ -87,24 +87,25 @@ class Data_tracking_model extends CI_Model
   {
     if ($search === NULL) {
       return [];
+    } else {
+      $this->db->select('a.*');
+      $this->db->from('mst_users a');
+      $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
+      $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
+      $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
+      if ($search) {
+        $this->db->like('a.fullname', $search);
+        $this->db->or_like('a.email', $search);
+        $this->db->or_like('a.username', $search);
+        $this->db->or_like('a.nip', $search);
+        $this->db->or_like('b.position_name', $search);
+        $this->db->or_like('c.role_name', $search);
+        $this->db->or_like('cat.category_name', $search);
+      }
+      $this->db->where('a.status', "active");
+      $query = $this->db->get();
+      return $query->num_rows();
     }
-    $this->db->select('a.*');
-    $this->db->from('mst_users a');
-    $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-    $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-    $this->db->join('mst_user_category cat', 'a.category = cat.id', 'left');
-    if ($search) {
-      $this->db->like('a.fullname', $search);
-      $this->db->or_like('a.email', $search);
-      $this->db->or_like('a.username', $search);
-      $this->db->or_like('a.nip', $search);
-      $this->db->or_like('b.position_name', $search);
-      $this->db->or_like('c.role_name', $search);
-      $this->db->or_like('cat.category_name', $search);
-    }
-    $this->db->where('a.status', "active");
-    $query = $this->db->get();
-    return $query->num_rows();
   }
 
   public function get_users_count_nonaktif($search)
