@@ -31,9 +31,6 @@
     }
   </script> -->
 
-  <?php
-  echo $this->session->flashdata('success');
-  ?>
 
 
 </div>
