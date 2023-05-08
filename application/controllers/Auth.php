@@ -24,7 +24,9 @@ class Auth extends CI_Controller
 
     if ($this->form_validation->run() === FALSE) {
       $cap = $this->create_captcha();
-      $data['captcha'] = $cap['image'];
+      if ($cap) {
+        $data['captcha'] = $cap['image'];
+      }
       $this->load->view('login', $data);
     } else {
       $captcha_input = $this->input->post('captcha');
@@ -34,15 +36,7 @@ class Auth extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $user = $this->User_model->check_user($email);
-        // var_dump($user);
-        // exit();
         if ($user) {
-          // // Dump informasi user di sini
-          // echo "<pre>";
-          // var_dump($user);
-          // echo "</pre>";
-          // exit; // Hentikan eksekusi lebih lanjut setelah menampilkan informasi user
-
           if (password_verify($password, $user->password)) {
             $userdata = array(
               'user_id' => $user->id,
@@ -56,13 +50,6 @@ class Auth extends CI_Controller
             );
 
             $this->session->set_userdata($userdata);
-            // $this->session->set_flashdata('hapus', 'Berhasil dihapus');
-
-            // var_dump($this->session->flashdata());
-            // var_dump($this->session->userdata());
-            // exit();
-
-            //var_dump($this->session->userdata('email'));
             redirect(base_url('dashboard'));
           } else {
             $this->session->set_flashdata('error', 'Invalid Password');
@@ -78,6 +65,7 @@ class Auth extends CI_Controller
       }
     }
   }
+
 
   public function register()
   {
