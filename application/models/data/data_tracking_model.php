@@ -83,8 +83,11 @@ class Data_tracking_model extends CI_Model
   }
 
 
-  public function get_users_count($search)
+  public function get_users_count($search = NULL)
   {
+    if ($search === NULL) {
+      return [];
+    }
     $this->db->select('a.*');
     $this->db->from('mst_users a');
     $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
