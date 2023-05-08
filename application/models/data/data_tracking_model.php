@@ -14,7 +14,7 @@ class Data_tracking_model extends CI_Model
     //   $query = $this->db->get('mst_users');
     //   return $query->result_array();
     // }
-    if ($id === NULL) {
+    if ($id == NULL) {
       return [];
     }
 
@@ -85,7 +85,7 @@ class Data_tracking_model extends CI_Model
 
   public function get_users_count($search = NULL)
   {
-    if ($search === NULL) {
+    if ($search == NULL) {
       return 0;
     } else {
       $this->db->select('a.*');
