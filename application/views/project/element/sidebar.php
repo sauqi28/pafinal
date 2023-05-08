@@ -44,7 +44,7 @@
                              </div><!--end sidebarAnalytics-->
                          </li><!--end nav-item-->
 
-                        <?php if ($this->session->userdata('role') == 'adminfull') { ?>
+
 
                          <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
                          <li class="nav-item">
@@ -129,7 +129,7 @@
                                  </ul><!--end nav-->
                              </div><!--end sidebarProjects-->
                          </li><!--end nav-item-->
-                      
+
                      <?php endif; ?>
                      </ul>
 
