@@ -10,9 +10,12 @@ class Data_tracking_model extends CI_Model
 
   public function get_users_view($id = NULL)
   {
+    // if ($id === NULL) {
+    //   $query = $this->db->get('mst_users');
+    //   return $query->result_array();
+    // }
     if ($id === NULL) {
-      $query = $this->db->get('mst_users');
-      return $query->result_array();
+      return [];
     }
 
     $this->db->select('a.*, b.position_name,v.vendor_name, c.role_name, cat.category_name');
