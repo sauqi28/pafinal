@@ -43,7 +43,7 @@
                     <?php $this->load->view('data/tracking/navbar'); ?>
 
 
-                    <form class="d-flex" method="get" action="<?php echo base_url('data_user/index'); ?>">
+                    <form class="d-flex" method="get" action="<?php echo base_url('tracking/index'); ?>">
                       <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" name="search" value="<?php echo $this->input->get('search'); ?>" autofocus id="search-input">
                         <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
@@ -197,21 +197,21 @@
           confirmButtonText: 'Ya, Nonaktifkan User!'
         }).then(function(result) {
           if (result.isConfirmed) {
-            window.location.href = '<?php echo base_url('data_user/update_status/1/'); ?>' + var1;
+            window.location.href = '<?php echo base_url('tracking/update_status/1/'); ?>' + var1;
           }
         });
       }
 
       function goEdit(var1) {
-        window.location.href = '<?php echo base_url('data_user/edit/'); ?>' + var1;
+        window.location.href = '<?php echo base_url('tracking/edit/'); ?>' + var1;
       }
 
       function goView(var1) {
-        window.location.href = '<?php echo base_url('data_user/view/'); ?>' + var1;
+        window.location.href = '<?php echo base_url('tracking/view/'); ?>' + var1;
       }
 
       function goVerified(var1) {
-        window.location.href = '<?php echo base_url('data_user/verified/'); ?>' + var1;
+        window.location.href = '<?php echo base_url('tracking/verified/'); ?>' + var1;
       }
 
       function verify_user(no_wa, id) {
@@ -226,7 +226,7 @@
           }
         });
 
-        $.post("<?php echo base_url('data_user/verify_user'); ?>", {
+        $.post("<?php echo base_url('tracking/verify_user'); ?>", {
           no_wa: no_wa,
           id: id,
           <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash(); ?>"
@@ -239,7 +239,7 @@
               text: 'Pesan sudah berhasil dikirimkan'
             }).then((result) => {
               // if (result.isConfirmed) {
-              //   window.location.href = "<?php echo base_url('data_user/index'); ?>";
+              //   window.location.href = "<?php echo base_url('tracking/index'); ?>";
               // }
             });
           } else {
@@ -265,7 +265,7 @@
           }
         });
 
-        $.post("<?php echo base_url('data_user/verify_signature'); ?>", {
+        $.post("<?php echo base_url('tracking/verify_signature'); ?>", {
           no_wa: no_wa,
           id: id,
           <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash(); ?>"
@@ -278,7 +278,7 @@
               text: 'Pesan sudah berhasil dikirimkan'
             }).then((result) => {
               // if (result.isConfirmed) {
-              //   window.location.href = "<?php echo base_url('data_user/index'); ?>";
+              //   window.location.href = "<?php echo base_url('tracking/index'); ?>";
               // }
             });
           } else {
