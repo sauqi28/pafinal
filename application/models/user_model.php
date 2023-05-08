@@ -18,11 +18,13 @@ class User_model extends CI_Model
   // }
   public function check_user($username)
   {
-    $this->db->select('a.id, a.username, a.category, a.fullname, a.email, a.password, b.id as position_id, b.position_name, c.id as role_id, c.role_name, a.status');
+    $this->db->select('id, username, fullname, email, password, category, status, roles');
     $this->db->from('mst_users a');
-    $this->db->join('mst_user_position b', 'a.position = b.id', 'left');
-    $this->db->join('mst_user_role c', 'a.role = c.id', 'left');
-    $this->db->where("(a.username = '$username' OR a.nip = '$username' OR a.email = '$username')");
+    $this->db->group_start();
+    $this->db->where('username', $username);
+    $this->db->or_where('nip', $username);
+    $this->db->or_where('email', $username);
+    $this->db->group_end();
     $this->db->limit(1);
     $user = $this->db->get()->row();
     return $user;
