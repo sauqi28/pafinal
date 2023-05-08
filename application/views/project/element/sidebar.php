@@ -45,92 +45,92 @@
                          </li><!--end nav-item-->
 
 
+                         <?php if ($this->session->userdata('role') === 'Superadmin') : ?>
+                             <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
+                             <li class="nav-item">
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
+                                     <i class="ti ti-stack menu-icon"></i>
+                                     <span>Penerimaan SAP</span>
+                                 </a>
+                                 <div class="collapse " id="sidebarAnalytics">
+                                     <ul class="nav flex-column">
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="<?php echo base_url('/penerimaan_sap'); ?>">Pengadaan</a>
+                                         </li><!--end nav-item-->
+                                         <li class="nav-item">
+                                             <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Retur</a>
+                                         </li><!--end nav-item-->
+                                         <li class="nav-item">
+                                             <a href="<?php echo base_url('/penerimaan_sap_intracompany'); ?>" class="nav-link ">Intracompany</a>
+                                         </li><!--end nav-item-->
 
-                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
-                         <li class="nav-item">
-                         <li class="nav-item">
-                             <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
-                                 <i class="ti ti-stack menu-icon"></i>
-                                 <span>Penerimaan SAP</span>
-                             </a>
-                             <div class="collapse " id="sidebarAnalytics">
-                                 <ul class="nav flex-column">
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('/penerimaan_sap'); ?>">Pengadaan</a>
-                                     </li><!--end nav-item-->
-                                     <li class="nav-item">
-                                         <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Retur</a>
-                                     </li><!--end nav-item-->
-                                     <li class="nav-item">
-                                         <a href="<?php echo base_url('/penerimaan_sap_intracompany'); ?>" class="nav-link ">Intracompany</a>
-                                     </li><!--end nav-item-->
-
-                                 </ul><!--end nav-->
-                             </div><!--end sidebarAnalytics-->
-                         </li><!--end nav-item-->
-
-
-                         <li class="nav-item">
-                             <a class="nav-link" href="<?php echo base_url('/penerimaan_marketplace'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Penerimaan Marketplace</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="<?php echo base_url('/bulk_approval_receivement'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Manajemen Approval</span></a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="<?php echo base_url('/bulk_notification_receivement'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Manajemen Notifikasi</span></a>
-                         </li>
+                                     </ul><!--end nav-->
+                                 </div><!--end sidebarAnalytics-->
+                             </li><!--end nav-item-->
 
 
-                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>aster</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
-                         <li class="nav-item">
-                             <?php if ($this->session->userdata('role') === 'Superadmin') : ?>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#sidebarProjects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
-                                 <i class="ti ti-brand-asana menu-icon"></i>
-                                 <span>Data</span>
-                             </a>
-                             <div class="collapse " id="sidebarProjects">
-
-                                 <ul class="nav flex-column">
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('data_user'); ?>"><span>Pengguna</span></a>
-                                     </li>
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('data_customer'); ?>"><span>Pelanggan</span></a>
-                                     </li>
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('data_vendor'); ?>"><span>Vendor</span></a>
-                                     </li>
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('data_material'); ?>"><span>Material</span></a>
-                                     </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="<?php echo base_url('/penerimaan_marketplace'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Penerimaan Marketplace</span></a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="<?php echo base_url('/bulk_approval_receivement'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Manajemen Approval</span></a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="<?php echo base_url('/bulk_notification_receivement'); ?>"><i class="ti ti-calendar menu-icon"></i><span>Manajemen Notifikasi</span></a>
+                             </li>
 
 
-                                 </ul><!--end nav-->
-                             </div><!--end sidebarProjects-->
-                         </li><!--end nav-item-->
+                             <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>aster</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
+                             <li class="nav-item">
 
-                         <li class="nav-item">
-                             <a class="nav-link" href="#setting" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
-                                 <i class="ti ti-brand-asana menu-icon"></i>
-                                 <span>Pengaturan</span>
-                             </a>
-                             <div class="collapse " id="setting">
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#sidebarProjects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
+                                     <i class="ti ti-brand-asana menu-icon"></i>
+                                     <span>Data</span>
+                                 </a>
+                                 <div class="collapse " id="sidebarProjects">
 
-                                 <ul class="nav flex-column">
+                                     <ul class="nav flex-column">
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="<?php echo base_url('data_user'); ?>"><span>Pengguna</span></a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="<?php echo base_url('data_customer'); ?>"><span>Pelanggan</span></a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="<?php echo base_url('data_vendor'); ?>"><span>Vendor</span></a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="<?php echo base_url('data_material'); ?>"><span>Material</span></a>
+                                         </li>
 
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="projects-index.html">User Penerimaan</a>
-                                     </li><!--end nav-item-->
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="projects-clients.html">Lainnya</a>
-                                     </li><!--end nav-item-->
 
-                                 </ul><!--end nav-->
-                             </div><!--end sidebarProjects-->
-                         </li><!--end nav-item-->
+                                     </ul><!--end nav-->
+                                 </div><!--end sidebarProjects-->
+                             </li><!--end nav-item-->
 
-                     <?php endif; ?>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#setting" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
+                                     <i class="ti ti-brand-asana menu-icon"></i>
+                                     <span>Pengaturan</span>
+                                 </a>
+                                 <div class="collapse " id="setting">
+
+                                     <ul class="nav flex-column">
+
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="projects-index.html">User Penerimaan</a>
+                                         </li><!--end nav-item-->
+                                         <li class="nav-item">
+                                             <a class="nav-link" href="projects-clients.html">Lainnya</a>
+                                         </li><!--end nav-item-->
+
+                                     </ul><!--end nav-->
+                                 </div><!--end sidebarProjects-->
+                             </li><!--end nav-item-->
+
+                         <?php endif; ?>
                      </ul>
 
                  </div><!--end sidebarCollapse-->
