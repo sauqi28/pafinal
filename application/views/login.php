@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="body" class="auth-page" style="background-image: url('<?php echo base_url('assets/images/peruri-2.jpg'); ?>'); background-size: cover; background-position: center center;">
+<body id="body" class="auth-page" style="background-image: url('<?php echo base_url('assets/images/Pseruri-2.jpg'); ?>'); background-size: cover; background-position: center center;">
   <!-- Log In page -->
   <div class="container-md">
     <div class="row vh-100 d-flex justify-content-center">
