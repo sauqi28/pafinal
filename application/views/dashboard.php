@@ -176,7 +176,8 @@
                               echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] / 1000000 . ' },';
                             }
                             ?>
-                          ]
+                          ],
+                          colors: '#4F7942'
                         }],
                         xaxis: {
                           type: 'category',
@@ -193,6 +194,9 @@
                           labels: {
                             formatter: function(val) {
                               return val.toFixed(2);
+                            },
+                            style: {
+                              colors: '#000000'
                             }
                           }
                         },
