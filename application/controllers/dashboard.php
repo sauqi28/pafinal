@@ -21,8 +21,8 @@ class Dashboard extends CI_Controller
 	public function index()
 	{
 		//var_dump($this->session->userdata('logged_in'));
-		$this->load->model('dashboard');
-		$data['data'] = $this->dashboard->grafik1();
+		$this->load->model('dashboard_model');
+		$data['data'] = $this->dashboard_model->grafik1();
 		$this->load->view('dashboard', $data);
 		// $this->load->view('dashboard');
 	}
