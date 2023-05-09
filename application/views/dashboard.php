@@ -138,17 +138,6 @@
                     <div id="chart"></div>
                     <script>
                       var options = {
-                        chart: {
-                          type: 'bar',
-                          height: 380,
-                          foreColor: '#ffffff',
-                          events: {
-                            dataPointSelection: function(event, chartContext, config) {
-                              console.log(config)
-                            }
-                          },
-                        },
-                        colors: ['#e69138'],
                         series: [{
                           name: 'Total Data (in Juta)',
                           data: [
@@ -157,43 +146,88 @@
                               echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
                             }
                             ?>
-                          ],
-                          colors: '#ffffff'
+                          ]
                         }],
+                        chart: {
+                          height: 350,
+                          type: 'bar',
+                        },
+                        plotOptions: {
+                          bar: {
+                            borderRadius: 10,
+                            dataLabels: {
+                              position: 'top',
+                            },
+                          }
+                        },
+                        dataLabels: {
+                          enabled: true,
+                          formatter: function(val) {
+                            return val + " Juta";
+                          },
+                          offsetY: -20,
+                          style: {
+                            fontSize: '12px',
+                            colors: ["#304758"]
+                          }
+                        },
                         xaxis: {
-                          type: 'category',
-                          labels: {
-                            formatter: function(val) {
-                              return val;
+                          categories: [
+                            <?php
+                            foreach ($grafik1 as $row) {
+                              echo '"' . $row['report_date'] . '",';
                             }
+                            ?>
+                          ],
+                          position: 'top',
+                          axisBorder: {
+                            show: false
+                          },
+                          axisTicks: {
+                            show: false
+                          },
+                          crosshairs: {
+                            fill: {
+                              type: 'gradient',
+                              gradient: {
+                                colorFrom: '#D8E3F0',
+                                colorTo: '#BED1E6',
+                                stops: [0, 100],
+                                opacityFrom: 0.4,
+                                opacityTo: 0.5,
+                              }
+                            }
+                          },
+                          tooltip: {
+                            enabled: true,
                           }
                         },
                         yaxis: {
-                          title: {
-                            text: 'Total Data (in Juta)'
+                          axisBorder: {
+                            show: false
+                          },
+                          axisTicks: {
+                            show: false,
                           },
                           labels: {
+                            show: false,
                             formatter: function(val) {
-                              return val.toFixed(2);
-                            },
-                            style: {
-                              color: '#ffffff'
+                              return val + " Juta";
                             }
                           }
+
                         },
-                        tooltip: {
-                          x: {
-                            formatter: function(val) {
-                              return val;
-                            }
-                          },
-                          y: {
-                            formatter: function(val) {
-                              return val.toFixed(2) + " Juta";
-                            }
+                        title: {
+                          text: 'Data Report',
+                          floating: true,
+                          offsetY: 330,
+                          align: 'center',
+                          style: {
+                            color: '#444'
                           }
                         }
                       };
+
                       var chart = new ApexCharts(document.querySelector("#chart"), options);
                       chart.render();
                     </script>
