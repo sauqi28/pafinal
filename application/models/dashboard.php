@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Contoh_model extends CI_Model
+class Dashboard extends CI_Model
 {
   public function grafik1()
   {
