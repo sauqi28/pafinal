@@ -149,7 +149,7 @@
                           ]
                         }],
                         chart: {
-                          height: 350,
+                          height: 380,
                           type: 'bar',
                         },
                         plotOptions: {
