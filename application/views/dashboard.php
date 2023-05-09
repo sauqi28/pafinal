@@ -165,13 +165,13 @@
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              echo '{ x: "' . $row['bulan'] . '/' . $row['tahun'] . '", y: ' . $row['total_data'] . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
                             }
                             ?>
                           ]
                         }],
                         xaxis: {
-                          type: 'category',
+                          type: 'category'
                         },
                       }
                       var chart = new ApexCharts(document.querySelector("#chart"), options);
