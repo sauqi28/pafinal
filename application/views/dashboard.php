@@ -165,7 +165,7 @@
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              echo '{ x: "' . $row['bulan'] . '/' . $row['tahun'] . '", y: ' . $row['total_data'] . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
                             }
                             ?>
                           ]
@@ -179,6 +179,7 @@
                     </script>
                   </div>
                 </div>
+
               </div><!--end card-->
             </div>
           </div>
