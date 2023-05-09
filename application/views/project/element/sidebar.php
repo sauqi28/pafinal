@@ -26,25 +26,8 @@
                  <div class="collapse navbar-collapse tab-content" id="sidebarCollapse">
 
                      <!-- Navigation -->
+
                      <ul class="navbar-nav tab-pane active" id="Main" role="tabpanel">
-                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>encarian</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
-                                 <i class="ti ti-stack menu-icon"></i>
-                                 <span>Tools</span>
-                             </a>
-                             <div class="collapse " id="sidebarAnalytics">
-                                 <ul class="nav flex-column">
-                                     <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('/tracking'); ?>">SN Tracking</a>
-                                     </li><!--end nav-item-->
-
-
-                                 </ul><!--end nav-->
-                             </div><!--end sidebarAnalytics-->
-                         </li><!--end nav-item-->
-
-
                          <?php if ($this->session->userdata('role') == 'superadmin') : ?>
                              <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
                              <li class="nav-item">
@@ -131,6 +114,25 @@
                              </li><!--end nav-item-->
 
                          <?php endif; ?>
+                         <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>encarian</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
+                                 <i class="ti ti-stack menu-icon"></i>
+                                 <span>Tools</span>
+                             </a>
+                             <div class="collapse " id="sidebarAnalytics">
+                                 <ul class="nav flex-column">
+                                     <li class="nav-item">
+                                         <a class="nav-link" href="<?php echo base_url('/tracking'); ?>">SN Tracking</a>
+                                     </li><!--end nav-item-->
+
+
+                                 </ul><!--end nav-->
+                             </div><!--end sidebarAnalytics-->
+                         </li><!--end nav-item-->
+
+
+
                      </ul>
 
                  </div><!--end sidebarCollapse-->
