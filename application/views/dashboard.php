@@ -233,7 +233,7 @@
                           data: [
                             <?php
                             foreach ($grafik2 as $data) {
-                              echo number_format($data['total_data'] / 1000000, 2)
+                              echo number_format($data['total_data'] / 1000000, 2);
                             }
                             ?>
                           ]
