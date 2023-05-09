@@ -173,7 +173,7 @@
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) + "jt" . ' },';
                             }
                             ?>
                           ],
