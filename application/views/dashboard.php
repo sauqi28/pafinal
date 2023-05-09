@@ -233,7 +233,7 @@
                           data: [
                             <?php
                             foreach ($grafik2 as $data) {
-                              echo $data['total_data'] . ',';
+                              echo $data['total_data'] / 1000000 . ',';
                             }
                             ?>
                           ]
@@ -259,6 +259,11 @@
                             }
                             ?>
                           ],
+                        },
+                        yaxis: {
+                          title: {
+                            text: 'Total Data (in Juta)'
+                          }
                         }
                       };
 
