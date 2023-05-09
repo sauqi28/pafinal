@@ -15,14 +15,12 @@
           <div class="page-title-box">
             <div class="float-end">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Unikit</a>
+                <li class="breadcrumb-item"><a href="#">Analisis</a>
                 </li><!--end nav-item-->
-                <li class="breadcrumb-item"><a href="#">Dashboard</a>
-                </li><!--end nav-item-->
-                <li class="breadcrumb-item active">Analytics</li>
+                <li class="breadcrumb-item active">Dashboard</li>
               </ol>
             </div>
-            <h4 class="page-title">Analytics</h4>
+            <h4 class="page-title">Dashboard</h4>
           </div><!--end page-title-box-->
         </div><!--end col-->
       </div>
@@ -30,7 +28,7 @@
 
       <div class="row">
 
-        <div class="col-lg-9 order-lg-2 order-md-1 order-sm-1">
+        <div class="col-lg-12 order-lg-2 order-md-1 order-sm-1">
           <div class="row justify-content-center">
             <div class="col-lg-3 col-md-6">
               <div class="card overflow-hidden">
