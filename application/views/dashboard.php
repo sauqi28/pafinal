@@ -154,7 +154,29 @@
                 </div><!--end card-header-->
                 <div class="card-body">
                   <div class="">
-                    <div id="ana_dash_1" class="apex-charts"></div>
+                    <div id="chart"></div>
+                    <script>
+                      var options = {
+                        chart: {
+                          type: 'bar'
+                        },
+                        series: [{
+                          name: 'Total Data',
+                          data: [
+                            <?php
+                            foreach ($data as $row) {
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
+                            }
+                            ?>
+                          ]
+                        }],
+                        xaxis: {
+                          type: 'datetime',
+                        },
+                      }
+                      var chart = new ApexCharts(document.querySelector("#chart"), options);
+                      chart.render();
+                    </script>
                   </div>
                 </div><!--end card-body-->
               </div><!--end card-->
