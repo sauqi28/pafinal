@@ -29,17 +29,17 @@
 
                      <ul class="navbar-nav tab-pane active" id="Main" role="tabpanel">
                          <?php if ($this->session->userdata('role') == 'superadmin') : ?>
-                             <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
+                             <li class="menu-label mt-0 text-primary font-12 fw-semibold">D<span>ashboard</span><br><span class="font-10 text-secondary fw-normal">Mesin</span></li>
                              <li class="nav-item">
                              <li class="nav-item">
                                  <a class="nav-link" href="#sidebarAnalytics" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAnalytics">
                                      <i class="ti ti-stack menu-icon"></i>
-                                     <span>Penerimaan SAP</span>
+                                     <span>Analisis</span>
                                  </a>
                                  <div class="collapse " id="sidebarAnalytics">
                                      <ul class="nav flex-column">
                                          <li class="nav-item">
-                                             <a class="nav-link" href="<?php echo base_url('/penerimaan_sap'); ?>">Pengadaan</a>
+                                             <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Grafik Mesin</a>
                                          </li><!--end nav-item-->
                                          <li class="nav-item">
                                              <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Retur</a>
