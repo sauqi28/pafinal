@@ -233,7 +233,7 @@
                           data: [
                             <?php
                             foreach ($grafik2 as $data) {
-                              echo $data['total_data'] / 1000000 . ',';
+                              echo number_format($data['total_data'] / 1000000, 2)
                             }
                             ?>
                           ]
@@ -255,9 +255,7 @@
                           categories: [
                             <?php
                             foreach ($grafik2 as $data) {
-                              // echo '"' . $data['tahun'] . '",';
-
-                              echo '{ x: "' . $data['tahun'] . '", y: ' . number_format($data['total_data'] / 1000000, 2) . ' },';
+                              echo '"' . $data['tahun'] . '",';
                             }
                             ?>
                           ],
