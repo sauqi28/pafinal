@@ -11,4 +11,15 @@ class Dashboard_model extends CI_Model
     }
     return $result;
   }
+  public function grafik2()
+  {
+    $this->db->select_sum('tot', 'total_data');
+    $this->db->select("YEAR(report_date) AS tahun");
+    $this->db->where("report_date IS NOT NULL");
+    $this->db->where("tot IS NOT NULL");
+    $this->db->group_by("YEAR(report_date)");
+    $this->db->order_by("YEAR(report_date)", "ASC");
+    $query = $this->db->get('report_1');
+    return $query->result_array();
+  }
 }

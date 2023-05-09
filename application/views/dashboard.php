@@ -116,7 +116,7 @@
                 <div class="card-header">
                   <div class="row align-items-center">
                     <div class="col">
-                      <h4 class="card-title">Audience Overview</h4>
+                      <h4 class="card-title">Data Mesin Bulanan</h4>
                     </div><!--end col-->
                     <div class="col-auto">
                       <div class="dropdown">
@@ -153,7 +153,7 @@
                           name: 'Total Data (in Juta)',
                           data: [
                             <?php
-                            foreach ($data as $row) {
+                            foreach ($data->grafik1 as $row) {
                               echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
                             }
                             ?>
@@ -202,6 +202,74 @@
 
               </div><!--end card-->
             </div>
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h4 class="card-title">Data Mesin Tahunan</h4>
+                    </div><!--end col-->
+                    <div class="col-auto">
+                      <div class="dropdown">
+                        <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          This Year<i class="las la-angle-down ms-1"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">Today</a>
+                          <a class="dropdown-item" href="#">Last Week</a>
+                          <a class="dropdown-item" href="#">Last Month</a>
+                          <a class="dropdown-item" href="#">This Year</a>
+                        </div>
+                      </div>
+                    </div><!--end col-->
+                  </div> <!--end row-->
+                </div><!--end card-header-->
+                <div class="card-body">
+                  <div class="">
+                    <div id="chart2"></div>
+                    <script>
+                      var options = {
+                        series: [{
+                          data: [
+                            <?php
+                            foreach ($data->grafik2 as $data) {
+                              echo $data['total_data'] . ',';
+                            }
+                            ?>
+                          ]
+                        }],
+                        chart: {
+                          type: 'bar',
+                          height: 350
+                        },
+                        plotOptions: {
+                          bar: {
+                            borderRadius: 4,
+                            horizontal: true,
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        xaxis: {
+                          categories: [
+                            <?php
+                            foreach ($report_data as $data) {
+                              echo '"' . $data['tahun'] . '",';
+                            }
+                            ?>
+                          ],
+                        }
+                      };
+
+                      var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                      chart.render();
+                    </script>
+                  </div>
+                </div>
+
+              </div><!--end card-->
+            </div>
           </div>
           <div class="row">
             <div class="col-9">
@@ -228,7 +296,7 @@
                 </div><!--end card-header-->
                 <div class="card-body">
                   <div class="">
-                    <div id="chart2"></div>
+                    <div id="chart3"></div>
 
                     <script>
                       var options = {
@@ -288,7 +356,7 @@
                         }
                       };
 
-                      var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                      var chart = new ApexCharts(document.querySelector("#chart3"), options);
                       chart.render();
                     </script>
                   </div>
