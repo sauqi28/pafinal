@@ -177,7 +177,7 @@
                             }
                             ?>
                           ],
-                          colors: '#4F7942'
+                          colors: '#ffffff'
                         }],
                         xaxis: {
                           type: 'category',
