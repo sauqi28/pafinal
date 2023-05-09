@@ -45,7 +45,7 @@
                          </li><!--end nav-item-->
 
 
-                         <?php if ($this->session->userdata('role') === 'Superadmin') : ?>
+                         <?php if ($this->session->userdata('role') == 'superadmin') : ?>
                              <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>enerimaan</span><br><span class="font-10 text-secondary fw-normal">Material</span></li>
                              <li class="nav-item">
                              <li class="nav-item">
