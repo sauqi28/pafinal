@@ -167,7 +167,7 @@
                             }
                           },
                         },
-                        colors: ['#175228'],
+                        colors: ['#16537e'],
                         series: [{
                           name: 'Total Data (in Juta)',
                           data: [
