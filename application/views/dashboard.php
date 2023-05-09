@@ -174,11 +174,12 @@
                         xaxis: {
                           type: 'category',
                           labels: {
-                            formatter: function(val) {
-                              return val;
+                            style: {
+                              colors: '#fff'
                             }
                           }
                         },
+
                         yaxis: {
                           title: {
                             text: 'Total Data (in Juta)'
