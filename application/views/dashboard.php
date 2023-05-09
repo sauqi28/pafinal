@@ -240,7 +240,7 @@
                         }],
                         chart: {
                           type: 'bar',
-                          height: 390
+                          height: 380
                         },
                         plotOptions: {
                           bar: {
