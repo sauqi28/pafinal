@@ -39,7 +39,7 @@
                                  <div class="collapse " id="sidebarAnalytics">
                                      <ul class="nav flex-column">
                                          <li class="nav-item">
-                                             <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Grafik Mesin</a>
+                                             <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Dashboard</a>
                                          </li><!--end nav-item-->
                                          <li class="nav-item">
                                              <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Retur</a>
