@@ -158,25 +158,54 @@
                     <script>
                       var options = {
                         chart: {
-                          type: 'bar'
+                          type: 'bar',
+                          height: 380
                         },
                         series: [{
-                          name: 'Total Data',
+                          name: 'Total Data (in Juta)',
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] / 1000000 . ' },';
                             }
                             ?>
                           ]
                         }],
                         xaxis: {
-                          type: 'category'
+                          type: 'category',
+                          labels: {
+                            formatter: function(val) {
+                              return val;
+                            }
+                          }
                         },
-                      }
+                        yaxis: {
+                          title: {
+                            text: 'Total Data (in Juta)'
+                          },
+                          labels: {
+                            formatter: function(val) {
+                              return val.toFixed(2);
+                            }
+                          }
+                        },
+                        tooltip: {
+                          x: {
+                            formatter: function(val) {
+                              return val;
+                            }
+                          },
+                          y: {
+                            formatter: function(val) {
+                              return val.toFixed(2) + " Juta";
+                            }
+                          }
+                        }
+                      };
                       var chart = new ApexCharts(document.querySelector("#chart"), options);
                       chart.render();
                     </script>
+
                   </div>
                 </div>
 
