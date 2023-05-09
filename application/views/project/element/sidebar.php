@@ -42,11 +42,12 @@
                                              <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Dashboard</a>
                                          </li><!--end nav-item-->
                                          <li class="nav-item">
-                                             <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Retur</a>
+                                             <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Report</a>
                                          </li><!--end nav-item-->
                                          <li class="nav-item">
-                                             <a href="<?php echo base_url('/penerimaan_sap_intracompany'); ?>" class="nav-link ">Intracompany</a>
+                                             <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">ETL Status</a>
                                          </li><!--end nav-item-->
+
 
                                      </ul><!--end nav-->
                                  </div><!--end sidebarAnalytics-->
