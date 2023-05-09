@@ -13,9 +13,10 @@ class Dashboard extends CI_Controller
 		// exit();
 		if (!$this->session->userdata('logged_in')) {
 			redirect('auth/login');
-		} else if ($this->session->userdata('role') != 'Superadmin') {
-			redirect('tracking');
 		}
+		// else if ($this->session->userdata('role')!= 'Superadmin') {
+		// 	redirect('tracking');
+		// }
 	}
 
 	public function index()
