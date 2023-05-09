@@ -158,23 +158,29 @@
                     <script>
                       var options = {
                         chart: {
-                          type: 'line',
+                          type: 'bar',
                           height: 380,
-                          foreColor: '#ffffff'
+                          foreColor: '#ffffff',
+                          events: {
+                            dataPointSelection: function(event, chartContext, config) {
+                              console.log(config)
+                            }
+                          },
                         },
+                        colors: ['#16537e'],
                         series: [{
                           name: 'Total Data (in Juta)',
-                          type: 'column',
                           data: [
                             <?php
                             foreach ($data as $row) {
                               echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
                             }
                             ?>
-                          ]
+                          ],
+                          colors: '#ffffff'
                         }],
                         xaxis: {
-                          type: 'datetime',
+                          type: 'category',
                           labels: {
                             formatter: function(val) {
                               return val;
@@ -193,9 +199,6 @@
                               color: '#ffffff'
                             }
                           }
-                        },
-                        dataLabels: {
-                          enabled: true
                         },
                         tooltip: {
                           x: {
