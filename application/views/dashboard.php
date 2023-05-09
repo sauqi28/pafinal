@@ -153,7 +153,7 @@
                           name: 'Total Data (in Juta)',
                           data: [
                             <?php
-                            foreach ($data->grafik1 as $row) {
+                            foreach ($grafik1 as $row) {
                               echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
                             }
                             ?>
@@ -232,7 +232,7 @@
                         series: [{
                           data: [
                             <?php
-                            foreach ($data->grafik2 as $data) {
+                            foreach ($grafik2 as $data) {
                               echo $data['total_data'] . ',';
                             }
                             ?>
@@ -254,7 +254,7 @@
                         xaxis: {
                           categories: [
                             <?php
-                            foreach ($report_data as $data) {
+                            foreach ($grafik2 as $data) {
                               echo '"' . $data['tahun'] . '",';
                             }
                             ?>
