@@ -72,15 +72,8 @@
                                              <a class="nav-link" href="<?php echo base_url('data_user'); ?>"><span>Pengguna</span></a>
                                          </li>
                                          <li class="nav-item">
-                                             <a class="nav-link" href="<?php echo base_url('data_customer'); ?>"><span>Pelanggan</span></a>
+                                             <a class="nav-link" href="<?php echo base_url('data_customer'); ?>"><span>Mesin</span></a>
                                          </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="<?php echo base_url('data_vendor'); ?>"><span>Vendor</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="<?php echo base_url('data_material'); ?>"><span>Material</span></a>
-                                         </li>
-
 
                                      </ul><!--end nav-->
                                  </div><!--end sidebarProjects-->
