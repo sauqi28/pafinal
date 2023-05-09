@@ -111,7 +111,7 @@
             </div> <!--end col-->
           </div><!--end row-->
           <div class="row">
-            <div class="col-9">
+            <div class="col-8">
               <div class="card">
                 <div class="card-header">
                   <div class="row align-items-center">
@@ -202,7 +202,7 @@
 
               </div><!--end card-->
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="card">
                 <div class="card-header">
                   <div class="row align-items-center">
