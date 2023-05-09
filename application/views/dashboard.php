@@ -3,6 +3,45 @@
 
 <div class="page-wrapper">
 
+  <html>
+
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+      #chart {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="chart"></div>
+    <script>
+      var options = {
+        chart: {
+          type: 'bar'
+        },
+        series: [{
+          name: 'Total Data',
+          data: [
+            <?php
+            foreach ($data as $row) {
+              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
+            }
+            ?>
+          ]
+        }],
+        xaxis: {
+          type: 'datetime',
+        },
+      }
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+    </script>
+  </body>
+
+  </html>
 
 
 </div>
