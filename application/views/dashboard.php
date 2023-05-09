@@ -29,24 +29,7 @@
       <!-- end page title end breadcrumb -->
 
       <div class="row">
-        <div class="col-md-12 col-lg-3 order-lg-1 order-md-2 order-sm-2">
-          <div class="card overflow-hidden">
-            <div class="card-body">
-              <div class="pt-3">
-                <h3 class="text-dark text-center font-24 fw-bold line-height-lg">Unikit
-                  <br>Multi Application
-                </h3>
-                <div class="text-center text-muted font-16 fw-bold pt-3 pb-1">We Design and Develop
-                  Clean and High Quality Web Applications</div>
 
-                <div class="text-center py-3 mb-3">
-                  <a href="#" class="btn btn-primary">Buy Now</a>
-                </div>
-                <img src="assets/images/small/business.png" alt="" class="img-fluid px-3 mb-2">
-              </div>
-            </div><!--end card-body-->
-          </div><!--end card-->
-        </div> <!--end col-->
         <div class="col-lg-9 order-lg-2 order-md-1 order-sm-1">
           <div class="row justify-content-center">
             <div class="col-lg-3 col-md-6">
