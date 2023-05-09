@@ -22,7 +22,7 @@ class Dashboard extends CI_Controller
 	{
 		//var_dump($this->session->userdata('logged_in'));
 		$this->load->model('dashboard');
-		$data['data'] = $this->contoh_model->get_data();
+		$data['data'] = $this->dashboard->dashboard1();
 		$this->load->view('dashboard', $data);
 		// $this->load->view('dashboard');
 	}
