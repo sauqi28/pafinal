@@ -218,7 +218,7 @@
 
                         },
                         title: {
-                          text: 'Data Report',
+                          text: '',
                           floating: true,
                           offsetY: 330,
                           align: 'center',
