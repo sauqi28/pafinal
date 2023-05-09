@@ -160,7 +160,7 @@
                         chart: {
                           type: 'bar',
                           height: 380,
-                          foreColor: '#fff',
+                          foreColor: '#ffffff',
                           events: {
                             dataPointSelection: function(event, chartContext, config) {
                               console.log(config)
@@ -173,7 +173,7 @@
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] / 1000000 . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . number_format($row['total_data'] / 1000000, 2) . ' },';
                             }
                             ?>
                           ],
@@ -196,7 +196,7 @@
                               return val.toFixed(2);
                             },
                             style: {
-                              colors: '#000000'
+                              color: '#ffffff'
                             }
                           }
                         },
