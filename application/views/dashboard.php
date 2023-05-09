@@ -161,32 +161,25 @@
                           type: 'bar'
                         },
                         series: [{
-                          name: 'Total Data (Juta)',
+                          name: 'Total Data',
                           data: [
                             <?php
                             foreach ($data as $row) {
-                              $total_data = $row['total_data'] / 1000000;
-                              echo '{ x: "' . $row['report_date'] . '", y: ' . $total_data . ' },';
+                              echo '{ x: "' . $row['report_date'] . '", y: ' . $row['total_data'] . ' },';
                             }
                             ?>
                           ]
                         }],
                         xaxis: {
-                          type: 'category',
+                          type: 'category'
                         },
-                        yaxis: {
-                          labels: {
-                            formatter: function(val) {
-                              return val + " Juta";
-                            }
-                          }
-                        }
                       }
                       var chart = new ApexCharts(document.querySelector("#chart"), options);
                       chart.render();
                     </script>
                   </div>
                 </div>
+
               </div><!--end card-->
             </div>
           </div>
