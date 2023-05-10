@@ -277,6 +277,8 @@
                 </div><!--end card-header-->
                 <div class="card-body">
                   <div class="">
+                    <br />
+                    <br />
                     <div id="chart2"></div>
                     <script>
                       var options = {
