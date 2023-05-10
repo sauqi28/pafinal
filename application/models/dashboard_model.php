@@ -22,4 +22,10 @@ class Dashboard_model extends CI_Model
     $query = $this->db->get('report_1');
     return $query->result_array();
   }
+
+  public function total_mesin()
+  {
+    $query = $this->db->query('SELECT COUNT(*) as jumlah from master_machine');
+    return $query->row()->jumlah;
+  }
 }

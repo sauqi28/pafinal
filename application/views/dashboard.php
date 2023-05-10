@@ -41,8 +41,8 @@
                       <div id="dash_spark_1" class="mb-3"></div>
                     </div><!--end col-->
                     <div class="col-12 ms-auto align-self-center">
-                      <h3 class="text-dark my-0 font-22 fw-bold">24000</h3>
-                      <p class="text-muted mb-0 fw-semibold">Sessions</p>
+                      <h3 class="text-dark my-0 font-22 fw-bold"><?php echo $total_mesin; ?></h3>
+                      <p class="text-muted mb-0 fw-semibold">Jumlah Mesin</p>
                     </div><!--end col-->
                   </div><!--end row-->
                 </div><!--end card-body-->

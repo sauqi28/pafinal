@@ -24,6 +24,7 @@ class Dashboard extends CI_Controller
 		$this->load->model('dashboard_model');
 		$data['grafik1'] = $this->dashboard_model->grafik1();
 		$data['grafik2'] = $this->dashboard_model->grafik2();
+		$data['total_mesin'] = $this->dashboard_model->total_mesin();
 		// var_dump($data);
 		$this->load->view('dashboard', $data);
 		// $this->load->view('dashboard');
