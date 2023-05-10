@@ -10,21 +10,14 @@ class Data_tracking_model extends CI_Model
 
   public function get_users_view($id = NULL)
   {
-    // if ($id === NULL) {
-    //   $query = $this->db->get('mst_users');
-    //   return $query->result_array();
-    // }
-    if ($id == NULL) {
-      return [];
-    }
-
-    $this->db->select('*');
-    $this->db->from('tb_sn');
-    $this->db->where('Number', $id);
+    $this->db->select('a.*, b.*, c.*, d.*');
+    $this->db->from('tb_sn a');
+    $this->db->join('tb_history_insert b', 'a.id_insert = b.id_insert');
+    $this->db->join('tb_file_path c', 'c.id_insert = b.id_insert');
+    $this->db->join('master_machine d', 'c.idmachine = d.IdMachine');
+    $this->db->where('a.id', $id);
     $query = $this->db->get();
-    $user_additional_info = $query->row_array();
-
-    return $user_additional_info;
+    return $query->result_array();
   }
 
 

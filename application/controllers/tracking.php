@@ -72,8 +72,9 @@ class Tracking extends CI_Controller
 
 
 
-	public function view($id = NULL)
+	public function view()
 	{
+		$id = $this->uri->segment(3);
 		$data['user'] = $this->data_tracking_model->get_users_view($id);
 		// var_dump($data);
 
@@ -84,9 +85,6 @@ class Tracking extends CI_Controller
 		$data['title'] = $this->title;
 		$data['subtitle'] = $this->subtitle;
 		$data['navbar'] = "data_user_add";
-		$data['user_positions'] = $this->data_tracking_model->get_all_positions();
-		$data['user_roles'] = $this->data_tracking_model->get_all_roles();
-		$data['user_category'] = $this->data_tracking_model->get_all_category();
 		$this->load->view('data/tracking/view', $data);
 	}
 }
