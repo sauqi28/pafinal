@@ -66,37 +66,32 @@
                     <div class="mb-3 row">
                       <label for="nip" class="col-sm-2 col-form-label text-end">NIP</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="text" name="nip" value="<?= $user['nip'] ?>" id="nip" disabled>
+                        <input class="form-control" type="text" name="nip" value="<?= $user['id_insert'] ?>" id="nip" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label for="username" class="col-sm-2 col-form-label text-end">Username</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="text" name="username" value="<?= $user['username'] ?>" id="username" disabled>
+                        <input class="form-control" type="text" name="username" value="<?= $user['ProductionOrderName'] ?>" id="username" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label for="fullname" class="col-sm-2 col-form-label text-end">Fullname</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="text" name="fullname" value="<?= $user['fullname'] ?>" id="fullname" disabled>
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['MachineType'] ?>" id="fullname" disabled>
                       </div>
                     </div>
 
-                    <div class="mb-3 row">
-                      <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
-                      <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['email'] ?>" id="email" disabled>
-                      </div>
-                    </div>
+
 
                     <div class="mb-3 row">
                       <label for="number" class="col-sm-2 col-form-label text-end">No WA</label>
                       <div class="col-sm-10">
                         <div class="input-group">
                           <div class="input-group-text">+</div>
-                          <input class="form-control" type="number" name="no_wa" value="<?= $user['no_wa'] ?>" id="no_wa" placeholder="6281387xxxxx" disabled>
+                          <input class="form-control" type="text" name="no_wa" value="<?= $user['number'] ?>" id="no_wa" placeholder="6281387xxxxx" disabled>
                         </div>
                       </div>
                     </div>
@@ -104,28 +99,28 @@
                     <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Position</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['position_name'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBankNote'] ?>" id="email" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label for="role" class="col-sm-2 col-form-label text-end">Role</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['role_name'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['OperationMode'] ?>" id="email" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
                       <label for="kategori" class="col-sm-2 col-form-label text-end">Kategori User</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['category_name'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['OutputStacker'] ?>" id="email" disabled>
                       </div>
                     </div>
                     <?php if (!empty($user['vendor_name'])) : ?>
                       <div class="mb-3 row">
                         <label for="kategori" class="col-sm-2 col-form-label text-end">Vendor</label>
                         <div class="col-sm-10">
-                          <input class="form-control" type="email" name="email" value="<?= $user['vendor_name'] ?>" id="email" disabled>
+                          <input class="form-control" type="email" name="email" value="<?= $user['opp'] ?>" id="email" disabled>
                         </div>
                       </div>
                     <?php endif; ?>
@@ -133,34 +128,10 @@
 
 
 
-                    <div class="mb-3 row">
-                      <div class="col-sm-10 offset-sm-2">
-                        <a class="btn btn-primary" onclick="goEdit('<?php echo $user['id']; ?>')">Edit</a>
-                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">Kembali</button>
-                      </div>
-                    </div>
-                  </form>
 
 
-                  <!-- END OF CONTENT -->
-                </div>
-                <div class="col-lg-6">
-                  <?php if (!empty($user['signature'])) : ?>
-                    <div class="mb-3 row">
-                      <label for="signature" class="col-sm-2 col-form-label text-end">Signature</label>
-                      <div class="col-sm-10">
-                        <img src="<?= base_url('assets/signatures/' . $user['signature']) ?>" alt="User Signature" style="max-width: 300px; max-height: 166px;">
-                      </div>
+                    <!-- END OF CONTENT -->
 
-                    </div>
-                    <div class="mb-3 row">
-                      <label for="signature" class="col-sm-2 col-form-label text-end"></label>
-                      <div class="col-sm-10">
-                        <p> Verified at : <?= $user['verified_at'] ?> </p>
-                      </div>
-
-                    </div>
-                  <?php endif; ?>
                 </div>
               </div>
 
