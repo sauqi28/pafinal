@@ -288,7 +288,6 @@
                           ?>
                         ],
                         chart: {
-                          width: 380,
                           height: 380,
                           type: 'pie',
                         },
