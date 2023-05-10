@@ -88,7 +88,7 @@
                     <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Position</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBankNote'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBanknote'] ?>" id="email" disabled>
                       </div>
                     </div>
 
