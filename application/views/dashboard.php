@@ -171,7 +171,7 @@
                         },
                         plotOptions: {
                           bar: {
-                            borderRadius: 10,
+                            borderRadius: 5,
                             dataLabels: {
                               position: 'top',
                             },
