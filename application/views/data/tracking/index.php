@@ -49,6 +49,7 @@
                         <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
                       </div>
                     </form>
+
                     <script src="https://unpkg.com/sweetalert2@10"></script>
                     <script>
                       $(document).ready(function() {
@@ -66,6 +67,7 @@
                             type: "POST",
                             url: $(this).attr('action'),
                             data: $(this).serialize(),
+                            dataType: 'json', // Tambahkan ini untuk memastikan respons dianggap sebagai JSON
                             success: function(data) {
                               Swal.close();
                               // Update tabel dengan data baru
@@ -79,7 +81,6 @@
                           });
                         });
                       });
-
 
                       function updateTable(data) {
                         // Mengambil referensi ke tbody dalam tabel Anda
@@ -105,6 +106,7 @@
                           $('<td>').text(item.MachineType).appendTo(row);
                           $('<td>').text(item.Sequence).appendTo(row);
                           $('<td>').text(item.OperationMode).appendTo(row);
+
                           $('<td>').text(item.QualityOfBanknote).appendTo(row);
                           $('<td>').html('<div class="button-items"><button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView(\'' + "/" + item.id + '\')"><i class="fas fa-eye"></i></button></div>').appendTo(row);
 
@@ -165,39 +167,14 @@
                       <th>Number</th>
                       <th>ProductionOrder</th>
                       <th>MachineID</th>
-                      <th>Squence</th>
+                      <th>Sequence</th>
                       <th>OperationMode</th>
                       <th>Quality</th>
                       <th class="text-end">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $i = 1;
-                    foreach ($users as $user) : ?>
-                      <tr>
-                        <td><?php echo $i++; ?></td>
-                        <td><?php echo $user['Number']; ?></td>
-                        <td><?php echo $user['ProductionOrderName']; ?></td>
-                        <td><?php echo $user['MachineType']; ?></td>
-                        <td><?php echo $user['Sequence']; ?></td>
-                        <td><?php echo $user['OperationMode']; ?></td>
-                        <td><?php echo $user['QualityOfBanknote']; ?></td>
-
-
-                        <td class="text-end">
-                          <div class="button-items">
-                            <button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView('<?php echo "/" . $user['id']; ?>')"><i class="fas fa-eye"></i></button>
-
-
-
-                          </div>
-                        </td>
-
-                      </tr>
-                    <?php endforeach; ?>
-
-
-
+                    <!-- Data akan dimuat oleh AJAX dan fungsi updateTable -->
                   </tbody>
                 </table><!--end /table-->
 

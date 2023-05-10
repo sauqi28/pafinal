@@ -31,35 +31,10 @@ class Tracking extends CI_Controller
 
 	public function index()
 	{
-		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$search = $this->input->post('search');  // Mengambil data dari POST
 
-		$config['base_url'] = site_url('tracking/index');
-		$config['total_rows'] = $this->data_tracking_model->get_users_count($search);
-		$config['per_page'] = 10;
-		$config['uri_segment'] = 3;
-		$config['reuse_query_string'] = TRUE;
+		$data['users'] = $this->data_tracking_model->get_users($search);
 
-		$config['full_tag_open'] = '<nav aria-label="..."><ul class="pagination">';
-		$config['full_tag_close'] = '</ul></nav>';
-		$config['first_link'] = FALSE;
-		$config['last_link'] = FALSE;
-		$config['next_link'] = 'Next';
-		$config['prev_link'] = 'Previous';
-		$config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
-		$config['cur_tag_close'] = ' <span class="sr-only">(current)</span></a></li>';
-		$config['num_tag_open'] = '<li class="page-item">';
-		$config['num_tag_close'] = '</li>';
-		$config['next_tag_open'] = '<li class="page-item">';
-		$config['next_tag_close'] = '</a></li>';
-		$config['prev_tag_open'] = '<li class="page-item">';
-		$config['prev_tag_close'] = '</a></li>';
-		$config['attributes'] = array('class' => 'page-link');
-
-		$this->pagination->initialize($config);
-
-		$data['users'] = $this->data_tracking_model->get_users($config['per_page'], $page, $search);
-		$data['pagination'] = $this->pagination->create_links();
 		$data['title'] = $this->title;
 		$data['subtitle'] = $this->subtitle;
 		$data['navbar'] = "data_user";
@@ -70,6 +45,7 @@ class Tracking extends CI_Controller
 			$this->load->view('data/tracking/index', $data);
 		}
 	}
+
 
 
 

@@ -23,7 +23,7 @@ class Data_tracking_model extends CI_Model
   }
 
 
-  public function get_users($limit, $start, $search = NULL)
+  public function get_users($search = NULL)
   {
     if ($search == NULL) {
       return [];
@@ -32,13 +32,13 @@ class Data_tracking_model extends CI_Model
     $this->db->from('tb_sn');
 
     if ($search) {
-      $this->db->where('Number', $search);
+      $this->db->like('Number', $search);  // Mengubah where menjadi like untuk pencarian
     }
 
-    $this->db->limit($limit, $start);
     $query = $this->db->get();
     return $query->result_array();
   }
+
 
 
 
