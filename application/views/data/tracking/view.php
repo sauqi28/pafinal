@@ -62,23 +62,29 @@
 
 
                     <div class="mb-3 row">
-                      <label for="nip" class="col-sm-2 col-form-label text-end">NIP</label>
+                      <label for="nip" class="col-sm-2 col-form-label text-end">Sync ID</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="text" name="nip" value="<?= $user['id_insert'] ?>" id="nip" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
-                      <label for="username" class="col-sm-2 col-form-label text-end">Username</label>
+                      <label for="username" class="col-sm-2 col-form-label text-end">Production Order Name</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="text" name="username" value="<?= $user['ProductionOrderName'] ?>" id="username" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
-                      <label for="fullname" class="col-sm-2 col-form-label text-end">Fullname</label>
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Machine Type</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="text" name="fullname" value="<?= $user['MachineType'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Machine Location</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['Description'] ?>" id="fullname" disabled>
                       </div>
                     </div>
 
@@ -86,21 +92,21 @@
 
 
                     <div class="mb-3 row">
-                      <label for="position" class="col-sm-2 col-form-label text-end">Position</label>
+                      <label for="position" class="col-sm-2 col-form-label text-end">Quality</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBanknote'] ?>" id="email" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
-                      <label for="role" class="col-sm-2 col-form-label text-end">Role</label>
+                      <label for="role" class="col-sm-2 col-form-label text-end">Operation Mode</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="email" name="email" value="<?= $user['OperationMode'] ?>" id="email" disabled>
                       </div>
                     </div>
 
                     <div class="mb-3 row">
-                      <label for="kategori" class="col-sm-2 col-form-label text-end">Kategori User</label>
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">Output Stacker</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="email" name="email" value="<?= $user['OutputStacker'] ?>" id="email" disabled>
                       </div>
