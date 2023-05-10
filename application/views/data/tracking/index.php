@@ -65,9 +65,9 @@
                             onBeforeOpen: () => {
                               Swal.showLoading();
                               timerInterval = setInterval(() => {
-                                elapsedTime += 100; // Menambahkan 100 milidetik ke elapsedTime
+                                elapsedTime += 100;
                                 Swal.getContent().querySelector('b')
-                                  .textContent = (elapsedTime / 1000).toFixed(2); // Menampilkan elapsedTime sebagai detik dengan 2 angka desimal
+                                  .textContent = (elapsedTime / 1000).toFixed(2);
                               }, 100)
                             },
                             onClose: () => {
@@ -75,21 +75,21 @@
                             },
                           });
 
-
-
                           $.ajax({
                             type: "POST",
                             url: $(this).attr('action'),
                             data: $(this).serialize(),
-                            dataType: 'json', // Tambahkan ini untuk memastikan respons dianggap sebagai JSON
+                            dataType: 'json',
                             success: function(data) {
                               Swal.close();
-                              // Update tabel dengan data baru
-                              updateTable(data);
+                              if (!$.isEmptyObject(data)) { // Cek apakah data kosong
+                                updateTable(data);
+                              } else {
+                                Swal.fire('Data Tidak Ditemukan', 'Data dengan ID tersebut tidak ditemukan', 'warning');
+                              }
                             },
                             error: function(error) {
                               Swal.close();
-                              // tampilkan pesan error
                               Swal.fire('Error', 'Terjadi kesalahan saat memuat data', 'error');
                             }
                           });
