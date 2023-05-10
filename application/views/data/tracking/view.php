@@ -87,10 +87,24 @@
                         <input class="form-control" type="text" name="fullname" value="<?= $user['Description'] ?>" id="fullname" disabled>
                       </div>
                     </div>
-
-
-
-
+                    <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Machine Serial Number</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['MachineSerialNumber'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Report User Area</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['ReportUserArea'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Machine Site Abbreviation</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['MachineSiteAbbreviation'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
                     <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Quality</label>
                       <div class="col-sm-10">
@@ -138,7 +152,7 @@
                     <div class="mb-3 row">
                       <label for="kategori" class="col-sm-2 col-form-label text-end">Report Time</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['ReportGenerationTime_1'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportGenerationTime'] ?>" id="email" disabled>
                       </div>
                     </div>
                     <div class="mb-3 row">
