@@ -114,14 +114,13 @@
               <div class="card overflow-hidden">
                 <div class="card-body">
                   <div class="pt-3">
-                    <h3 class="text-dark text-center font-24 fw-bold line-height-lg">Unikit
-                      <br>Multi Application
+                    <h3 class="text-dark text-center font-24 fw-bold line-height-lg">Data Mesin
+                      <br>Peruri
                     </h3>
-                    <div class="text-center text-muted font-16 fw-bold pt-3 pb-1">We Design and Develop
-                      Clean and High Quality Web Applications</div>
+                    <div class="text-center text-muted font-16 fw-bold pt-3 pb-1">Laporan Data Mesin</div>
 
                     <div class="text-center py-3 mb-3">
-                      <a href="#" class="btn btn-primary">Buy Now</a>
+                      <a href="#" class="btn btn-primary">Report</a>
                     </div>
                     <img src="assets/images/small/business.png" alt="" class="img-fluid px-3 mb-2">
                   </div>
@@ -140,12 +139,12 @@
                         <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           This Year<i class="las la-angle-down ms-1"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end">
+                        <!-- <div class="dropdown-menu dropdown-menu-end">
                           <a class="dropdown-item" href="#">Today</a>
                           <a class="dropdown-item" href="#">Last Week</a>
                           <a class="dropdown-item" href="#">Last Month</a>
                           <a class="dropdown-item" href="#">This Year</a>
-                        </div>
+                        </div> -->
                       </div>
                     </div><!--end col-->
                   </div> <!--end row-->
