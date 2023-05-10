@@ -282,6 +282,7 @@
                     <br />
                     <br />
                     <br />
+                    <br />
                     <div id="chart2"></div>
                     <script>
                       var options = {
