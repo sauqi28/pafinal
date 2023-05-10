@@ -127,72 +127,7 @@
                 </div>
               </div>
             </div> end col -->
-            <div class="col-4">
-              <div class="card">
-                <div class="card-header">
-                  <div class="row align-items-center">
-                    <div class="col">
-                      <h4 class="card-title">Data Mesin Tahunan</h4>
-                    </div><!--end col-->
-                    <div class="col-auto">
-                      <div class="dropdown">
-                        <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          This Year<i class="las la-angle-down ms-1"></i>
-                        </a>
-                        <!-- <div class="dropdown-menu dropdown-menu-end">
-                          <a class="dropdown-item" href="#">Today</a>
-                          <a class="dropdown-item" href="#">Last Week</a>
-                          <a class="dropdown-item" href="#">Last Month</a>
-                          <a class="dropdown-item" href="#">This Year</a>
-                        </div> -->
-                      </div>
-                    </div><!--end col-->
-                  </div> <!--end row-->
-                </div><!--end card-header-->
-                <div class="card-body">
-                  <div class="">
-                    <div id="chart2"></div>
-                    <script>
-                      var options = {
-                        series: [
-                          <?php
-                          foreach ($grafik2 as $data) {
-                            echo $data['total_data'] . ',';
-                          }
-                          ?>
-                        ],
-                        chart: {
-                          width: 380,
-                          type: 'pie',
-                        },
-                        labels: [
-                          <?php
-                          foreach ($grafik2 as $data) {
-                            echo '"' . $data['tahun'] . '",';
-                          }
-                          ?>
-                        ],
-                        responsive: [{
-                          breakpoint: 480,
-                          options: {
-                            chart: {
-                              width: 200
-                            },
-                            legend: {
-                              position: 'bottom'
-                            }
-                          }
-                        }]
-                      };
-                      var chart = new ApexCharts(document.querySelector("#chart2"), options);
-                      chart.render();
-                    </script>
 
-                  </div>
-                </div>
-
-              </div><!--end card-->
-            </div>
             <div class="col-8">
               <div class="card">
                 <div class="card-header">
@@ -313,6 +248,72 @@
                       var chart = new ApexCharts(document.querySelector("#chart"), options);
                       chart.render();
                     </script>
+                  </div>
+                </div>
+
+              </div><!--end card-->
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h4 class="card-title">Data Mesin Tahunan</h4>
+                    </div><!--end col-->
+                    <div class="col-auto">
+                      <div class="dropdown">
+                        <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          This Year<i class="las la-angle-down ms-1"></i>
+                        </a>
+                        <!-- <div class="dropdown-menu dropdown-menu-end">
+                          <a class="dropdown-item" href="#">Today</a>
+                          <a class="dropdown-item" href="#">Last Week</a>
+                          <a class="dropdown-item" href="#">Last Month</a>
+                          <a class="dropdown-item" href="#">This Year</a>
+                        </div> -->
+                      </div>
+                    </div><!--end col-->
+                  </div> <!--end row-->
+                </div><!--end card-header-->
+                <div class="card-body">
+                  <div class="">
+                    <div id="chart2"></div>
+                    <script>
+                      var options = {
+                        series: [
+                          <?php
+                          foreach ($grafik2 as $data) {
+                            echo $data['total_data'] . ',';
+                          }
+                          ?>
+                        ],
+                        chart: {
+                          width: 380,
+                          type: 'pie',
+                        },
+                        labels: [
+                          <?php
+                          foreach ($grafik2 as $data) {
+                            echo '"' . $data['tahun'] . '",';
+                          }
+                          ?>
+                        ],
+                        responsive: [{
+                          breakpoint: 480,
+                          options: {
+                            chart: {
+                              width: 200
+                            },
+                            legend: {
+                              position: 'bottom'
+                            }
+                          }
+                        }]
+                      };
+                      var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                      chart.render();
+                    </script>
+
                   </div>
                 </div>
 
