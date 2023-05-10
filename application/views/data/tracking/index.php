@@ -55,11 +55,22 @@
                       $(document).ready(function() {
                         $('form').on('submit', function(e) {
                           e.preventDefault();
+                          let timerInterval;
                           Swal.fire({
-                            title: 'Loading...',
+                            title: 'Harap Menunggu...',
+                            html: 'Loading data dalam <b></b> milliseconds.',
+                            timer: 2000, // Waktu loading dalam miliseconds
+                            timerProgressBar: true,
                             allowOutsideClick: false,
                             onBeforeOpen: () => {
-                              Swal.showLoading()
+                              Swal.showLoading();
+                              timerInterval = setInterval(() => {
+                                Swal.getContent().querySelector('b')
+                                  .textContent = Swal.getTimerLeft()
+                              }, 100)
+                            },
+                            onClose: () => {
+                              clearInterval(timerInterval)
                             },
                           });
 
@@ -81,6 +92,7 @@
                           });
                         });
                       });
+
 
                       function updateTable(data) {
                         // Mengambil referensi ke tbody dalam tabel Anda
@@ -180,7 +192,7 @@
 
               </div><!--end /tableresponsive-->
               </br>
-              <?php echo $pagination; ?>
+
 
             </div>
 
