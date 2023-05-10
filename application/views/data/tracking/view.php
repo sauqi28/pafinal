@@ -38,8 +38,6 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent6">
 
 
-                    <?php $this->load->view('data/tracking/navbar'); ?>
-
 
 
                   </div>
@@ -86,15 +84,6 @@
 
 
 
-                    <div class="mb-3 row">
-                      <label for="number" class="col-sm-2 col-form-label text-end">No WA</label>
-                      <div class="col-sm-10">
-                        <div class="input-group">
-                          <div class="input-group-text">+</div>
-                          <input class="form-control" type="text" name="no_wa" value="<?= $user['number'] ?>" id="no_wa" placeholder="6281387xxxxx" disabled>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Position</label>
