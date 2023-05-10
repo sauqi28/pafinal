@@ -279,6 +279,9 @@
                   <div class="">
                     <br />
                     <br />
+                    <br />
+                    <br />
+                    <br />
                     <div id="chart2"></div>
                     <script>
                       var options = {
@@ -290,7 +293,7 @@
                           ?>
                         ],
                         chart: {
-                          height: 380,
+                          width: 380,
                           type: 'pie',
                         },
                         labels: [
