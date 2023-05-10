@@ -120,7 +120,7 @@
                     <div class="text-center text-muted font-16 fw-bold pt-3 pb-1">Laporan Data Mesin</div>
 
                     <div class="text-center py-3 mb-3">
-                      <a href="#" class="btn btn-primary">Report</a>
+                      <a href="#" class="btn btn-success">Report</a>
                     </div>
                     <img src="assets/images/small/business.png" alt="" class="img-fluid px-3 mb-2">
                   </div>
