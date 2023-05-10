@@ -94,7 +94,7 @@
                 <div class="card-body">
                   <div class="row d-flex">
                     <div class="col-3">
-                      <i class="ti ti-confetti font-36 align-self-center text-dark"></i>
+                      <i class="mdi mdi-database-import font-36 align-self-center text-dark"></i>
                     </div><!--end col-->
 
                     <div class="col-12 ms-auto align-self-center">
