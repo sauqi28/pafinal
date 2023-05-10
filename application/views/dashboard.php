@@ -110,7 +110,7 @@
             </div> <!--end col-->
           </div><!--end row-->
           <div class="row">
-            <div class="col-md-12 col-lg-3 order-lg-1 order-md-2 order-sm-2">
+            <div class="col-3 col-lg-3 order-lg-1 order-md-2 order-sm-2">
               <div class="card overflow-hidden">
                 <div class="card-body">
                   <div class="pt-3">
