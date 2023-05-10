@@ -59,8 +59,8 @@
                           let elapsedTime = 0; // Menambahkan variabel elapsedTime
 
                           Swal.fire({
-                            title: 'Please Wait...',
-                            html: 'Loading data for <b></b> seconds.',
+                            title: 'Mohon menunggu...',
+                            html: 'Sedang melakukan pencarian | <b></b> seconds.',
                             allowOutsideClick: false,
                             onBeforeOpen: () => {
                               Swal.showLoading();
@@ -85,14 +85,14 @@
                               if (!$.isEmptyObject(data)) { // Check if data is empty
                                 updateTable(data);
                                 Swal.fire({
-                                  title: 'Data Found',
-                                  text: 'Data with the specified ID was found in ' + (elapsedTime / 1000).toFixed(2) + ' seconds.',
+                                  title: 'Data Ditemukan',
+                                  text: 'Data dengan spesifik ID telah ditemukan dalam waktu' + (elapsedTime / 1000).toFixed(2) + ' Detik.',
                                   type: 'success',
-                                  timer: 1500,
+                                  timer: 2500,
                                   showConfirmButton: false
                                 });
                               } else {
-                                Swal.fire('Data Not Found', 'Data with the specified ID was not found', 'warning');
+                                Swal.fire('Data Tidak Ditemukan', 'Data dengan spesifik ID tidak dapat ditemukan', 'warning');
                               }
                             },
                             error: function(error) {
