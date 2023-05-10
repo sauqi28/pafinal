@@ -38,4 +38,9 @@ class Dashboard_model extends CI_Model
     $query = $this->db->query('SELECT tot as jumlah from report_2');
     return $query->row()->jumlah;
   }
+  public function raw_data()
+  {
+    $query = $this->db->query('select sum(file_size)/1000000000 as size from tb_file_path');
+    return $query->row()->size;
+  }
 }
