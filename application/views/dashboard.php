@@ -282,25 +282,16 @@
                     <div id="chart2"></div>
                     <script>
                       var options = {
-                        series: [{
-                          data: [
-                            <?php
-                            foreach ($grafik2 as $data) {
-                              echo '{ name: "' . $data['tahun'] . '", value: ' . $data['total_data'] . ' },';
-                            }
-                            ?>
-                          ]
-                        }],
-                        chart: {
-                          type: 'pie',
-                          height: 350
-                        },
-                        plotOptions: {
-                          pie: {
-                            donut: {
-                              size: '60%'
-                            }
+                        series: [
+                          <?php
+                          foreach ($grafik2 as $data) {
+                            echo $data['total_data'] . ',';
                           }
+                          ?>
+                        ],
+                        chart: {
+                          width: 380,
+                          type: 'pie',
                         },
                         labels: [
                           <?php
@@ -309,16 +300,18 @@
                           }
                           ?>
                         ],
-                        legend: {
-                          show: true
-                        },
-                        dataLabels: {
-                          formatter: function(val) {
-                            return val.toFixed(2) + "%";
+                        responsive: [{
+                          breakpoint: 480,
+                          options: {
+                            chart: {
+                              width: 200
+                            },
+                            legend: {
+                              position: 'bottom'
+                            }
                           }
-                        }
+                        }]
                       };
-
                       var chart = new ApexCharts(document.querySelector("#chart2"), options);
                       chart.render();
                     </script>
