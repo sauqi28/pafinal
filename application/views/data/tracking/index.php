@@ -43,7 +43,7 @@
                     <?php $this->load->view('data/tracking/navbar'); ?>
 
 
-                    <form class="d-flex" method="get" action="<?php echo base_url('tracking/index'); ?>">
+                    <form class="d-flex" method="POST" action="<?php echo base_url('tracking/index'); ?>">
                       <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" name="search" value="<?php echo $this->input->get('search'); ?>" autofocus id="search-input">
                         <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
@@ -63,21 +63,51 @@
                           });
 
                           $.ajax({
-                            type: $(this).attr('method'),
+                            type: "POST",
                             url: $(this).attr('action'),
                             data: $(this).serialize(),
                             success: function(data) {
                               Swal.close();
-                              // proses data atau redirect ke halaman lain
+                              // Update tabel dengan data baru
+                              updateTable(data);
                             },
                             error: function(error) {
                               Swal.close();
                               // tampilkan pesan error
+                              Swal.fire('Error', 'Terjadi kesalahan saat memuat data', 'error');
                             }
                           });
                         });
                       });
+
+
+                      function updateTable(data) {
+                        // Mengambil referensi ke tbody dalam tabel Anda
+                        var tbody = $('table.table tbody');
+
+                        // Menghapus baris yang ada
+                        tbody.empty();
+
+                        // Iterasi melalui setiap item dalam data
+                        $.each(data, function(i, item) {
+                          // Membuat baris baru
+                          var row = $('<tr>');
+
+                          // Menambahkan kolom ke baris
+                          $('<td>').text(i + 1).appendTo(row);
+                          $('<td>').text(item.Number).appendTo(row);
+                          $('<td>').text(item.ProductionOrderName).appendTo(row);
+                          $('<td>').text(item.MachineType).appendTo(row);
+                          $('<td>').text(item.Sequence).appendTo(row);
+                          $('<td>').text(item.OperationMode).appendTo(row);
+                          $('<td>').text(item.QualityOfBanknote).appendTo(row);
+                          $('<td>').html('<div class="button-items"><button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView(\'' + "/" + item.id + '\')"><i class="fas fa-eye"></i></button></div>').appendTo(row);
+                          // Menambahkan baris ke tbody
+                          tbody.append(row);
+                        });
+                      }
                     </script>
+
 
                     <script>
                       function moveCursorToPosition(el, pos) {
