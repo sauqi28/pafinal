@@ -106,6 +106,12 @@
                       </div>
                     </div>
                     <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Report Section Data Type</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['ReportSectionDataType'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Quality</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBanknote'] ?>" id="email" disabled>
