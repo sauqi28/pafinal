@@ -80,8 +80,8 @@
                       <div id="dash_spark_3" class="mb-3"></div>
                     </div><!--end col-->
                     <div class="col-12 ms-auto align-self-center">
-                      <h3 class="text-dark my-0 font-22 fw-bold">$2400</h3>
-                      <p class="text-muted mb-0 fw-semibold">Bounce Rate</p>
+                      <h3 class="text-dark my-0 font-22 fw-bold"><?php echo number_format($total_po / 1000000, 2) . " juta"; ?></h3>
+                      <p class="text-muted mb-0 fw-semibold">Total Data</p>
                     </div><!--end col-->
                   </div><!--end row-->
                 </div><!--end card-body-->
