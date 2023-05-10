@@ -50,7 +50,6 @@
                       </div>
                     </form>
 
-                    <script src="https://unpkg.com/sweetalert2@10"></script>
                     <script>
                       $(document).ready(function() {
                         $('form').on('submit', function(e) {
