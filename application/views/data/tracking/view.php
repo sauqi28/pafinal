@@ -138,7 +138,7 @@
                     <div class="mb-3 row">
                       <label for="kategori" class="col-sm-2 col-form-label text-end">Report Time</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="email" name="email" value="<?= $user['ReportGenerationTime'] ?>" id="email" disabled>
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportGenerationTime_1'] ?>" id="email" disabled>
                       </div>
                     </div>
                     <div class="mb-3 row">
