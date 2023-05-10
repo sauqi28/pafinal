@@ -38,7 +38,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent6">
 
 
-                    <?php $this->load->view('data/user/navbar'); ?>
+                    <?php $this->load->view('data/tracking/navbar'); ?>
 
 
 
