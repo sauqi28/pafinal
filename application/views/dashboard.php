@@ -288,7 +288,7 @@
                           <div class="text-center py-3 mb-3">
                             <a href="#" class="btn btn-success">Report</a>
                           </div>
-
+                          <img src="assets/images/small/business.png" alt="" class="img-fluid px-3 mb-2">
                         </div>
                       </div>
                     </div>
