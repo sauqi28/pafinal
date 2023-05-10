@@ -277,12 +277,21 @@
                 </div><!--end card-header-->
                 <div class="card-body">
                   <div class="">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    <div class="card overflow-hidden">
+                      <div class="card-body">
+                        <div class="pt-3">
+                          <h3 class="text-dark text-center font-24 fw-bold line-height-lg">Data Mesin
+                            <br>Peruri
+                          </h3>
+                          <div class="text-center text-muted font-16 fw-bold pt-3 pb-1">Laporan Data Mesin</div>
+
+                          <div class="text-center py-3 mb-3">
+                            <a href="#" class="btn btn-success">Report</a>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
                     <div id="chart2"></div>
                     <script>
                       var options = {
