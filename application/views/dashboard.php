@@ -35,7 +35,7 @@
                 <div class="card-body">
                   <div class="row d-flex">
                     <div class="col-3">
-                      <i class="ti ti-users font-36 align-self-center text-dark"></i>
+                      <i class="mdi mdi-settings font-36 align-self-center text-dark"></i>
                     </div><!--end col-->
                     <div class="col-12 ms-auto align-self-center">
                       <div id="dash_spark_1" class="mb-3"></div>
@@ -53,7 +53,7 @@
                 <div class="card-body">
                   <div class="row d-flex">
                     <div class="col-3">
-                      <i class="ti ti-clock font-36 align-self-center text-dark"></i>
+                      <i class="mdi mdi-book-outline font-36 align-self-center text-dark"></i>
                     </div><!--end col-->
                     <div class="col-auto ms-auto align-self-center">
                       <span class="badge badge-soft-success px-2 py-1 font-11">Active</span>
@@ -74,7 +74,7 @@
                 <div class="card-body">
                   <div class="row d-flex">
                     <div class="col-3">
-                      <i class="ti ti-activity font-36 align-self-center text-dark"></i>
+                      <i class="mdi mdi-database-edit font-36 align-self-center text-dark"></i>
                     </div><!--end col-->
                     <div class="col-12 ms-auto align-self-center">
                       <div id="dash_spark_3" class="mb-3"></div>
