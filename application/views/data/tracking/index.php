@@ -59,8 +59,8 @@
                           let elapsedTime = 0; // Menambahkan variabel elapsedTime
 
                           Swal.fire({
-                            title: 'Harap Menunggu...',
-                            html: 'Loading data selama <b></b> detik.',
+                            title: 'Please Wait...',
+                            html: 'Loading data for <b></b> seconds.',
                             allowOutsideClick: false,
                             onBeforeOpen: () => {
                               Swal.showLoading();
@@ -82,17 +82,25 @@
                             dataType: 'json',
                             success: function(data) {
                               Swal.close();
-                              if (!$.isEmptyObject(data)) { // Cek apakah data kosong
+                              if (!$.isEmptyObject(data)) { // Check if data is empty
                                 updateTable(data);
+                                Swal.fire({
+                                  title: 'Data Found',
+                                  text: 'Data with the specified ID was found in ' + (elapsedTime / 1000).toFixed(2) + ' seconds.',
+                                  type: 'success',
+                                  timer: 1500,
+                                  showConfirmButton: false
+                                });
                               } else {
-                                Swal.fire('Data Tidak Ditemukan', 'Data dengan ID tersebut tidak ditemukan', 'warning');
+                                Swal.fire('Data Not Found', 'Data with the specified ID was not found', 'warning');
                               }
                             },
                             error: function(error) {
                               Swal.close();
-                              Swal.fire('Error', 'Terjadi kesalahan saat memuat data', 'error');
+                              Swal.fire('Error', 'An error occurred while loading data', 'error');
                             }
                           });
+
                         });
                       });
 
