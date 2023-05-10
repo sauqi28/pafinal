@@ -50,84 +50,85 @@
                       </div>
                     </form>
 
+                    <script src="https://unpkg.com/sweetalert2@10"></script>
                     <script>
                       $(document).ready(function() {
-                        $('form').on('submit', function(e) {
-                          e.preventDefault();
-                          let timerInterval;
-                          let elapsedTime = 0; // Menambahkan variabel elapsedTime
+                            $('form').on('submit', function(e) {
+                              e.preventDefault();
+                              let timerInterval;
+                              let elapsedTime = 0; // Menambahkan variabel elapsedTime
 
-                          Swal.fire({
-                            title: 'Harap Menunggu...',
-                            html: 'Loading data selama <b></b> detik.',
-                            allowOutsideClick: false,
-                            onBeforeOpen: () => {
-                              Swal.showLoading();
-                              timerInterval = setInterval(() => {
-                                elapsedTime += 100; // Menambahkan 100 milidetik ke elapsedTime
-                                Swal.getContent().querySelector('b')
-                                  .textContent = (elapsedTime / 1000).toFixed(2); // Menampilkan elapsedTime sebagai detik dengan 2 angka desimal
-                              }, 100)
-                            },
-                            onClose: () => {
-                              clearInterval(timerInterval)
-                            },
-                          });
+                              Swal.fire({
+                                title: 'Harap Menunggu...',
+                                html: 'Loading data selama <b></b> detik.',
+                                allowOutsideClick: false,
+                                onBeforeOpen: () => {
+                                  Swal.showLoading();
+                                  timerInterval = setInterval(() => {
+                                    elapsedTime += 100;
+                                    Swal.getContent().querySelector('b')
+                                      .textContent = (elapsedTime / 1000).toFixed(2);
+                                  }, 100)
+                                },
+                                onClose: () => {
+                                  clearInterval(timerInterval)
+                                },
+                              });
+
+                              $.ajax({
+                                type: "POST",
+                                url: $(this).attr('action'),
+                                data: $(this).serialize(),
+                                dataType: 'json',
+                                success: function(data) {
+                                  Swal.close();
+                                  if (!$.isEmptyObject(data)) { // Cek apakah data kosong
+                                    updateTable(data);
+                                  } else {
+                                    Swal.fire('Data Tidak Ditemukan', 'Data dengan ID tersebut tidak ditemukan', 'warning');
+                                  }
+                                },
+                                error: function(error) {
+                                  Swal.close();
+                                  Swal.fire('Error', 'Terjadi kesalahan saat memuat data', 'error');
+                                }
+                              });
+                            });
 
 
 
-                          $.ajax({
-                            type: "POST",
-                            url: $(this).attr('action'),
-                            data: $(this).serialize(),
-                            dataType: 'json', // Tambahkan ini untuk memastikan respons dianggap sebagai JSON
-                            success: function(data) {
-                              Swal.close();
-                              // Update tabel dengan data baru
-                              updateTable(data);
-                            },
-                            error: function(error) {
-                              Swal.close();
-                              // tampilkan pesan error
-                              Swal.fire('Error', 'Terjadi kesalahan saat memuat data', 'error');
+                            function updateTable(data) {
+                              // Mengambil referensi ke tbody dalam tabel Anda
+                              var tbody = $('table.table tbody');
+
+                              // Menghapus baris yang ada
+                              tbody.empty();
+
+                              // Cek jika data adalah array, jika bukan, ubah menjadi array
+                              if (!Array.isArray(data)) {
+                                data = [data];
+                              }
+
+                              // Iterasi melalui setiap item dalam data
+                              $.each(data, function(i, item) {
+                                // Membuat baris baru
+                                var row = $('<tr>');
+
+                                // Menambahkan kolom ke baris
+                                $('<td>').text(i + 1).appendTo(row);
+                                $('<td>').text(item.Number).appendTo(row);
+                                $('<td>').text(item.ProductionOrderName).appendTo(row);
+                                $('<td>').text(item.MachineType).appendTo(row);
+                                $('<td>').text(item.Sequence).appendTo(row);
+                                $('<td>').text(item.OperationMode).appendTo(row);
+
+                                $('<td>').text(item.QualityOfBanknote).appendTo(row);
+                                $('<td>').html('<div class="button-items"><button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView(\'' + "/" + item.id + '\')"><i class="fas fa-eye"></i></button></div>').appendTo(row);
+
+                                // Menambahkan baris ke tbody
+                                tbody.append(row);
+                              });
                             }
-                          });
-                        });
-                      });
-
-
-                      function updateTable(data) {
-                        // Mengambil referensi ke tbody dalam tabel Anda
-                        var tbody = $('table.table tbody');
-
-                        // Menghapus baris yang ada
-                        tbody.empty();
-
-                        // Cek jika data adalah array, jika bukan, ubah menjadi array
-                        if (!Array.isArray(data)) {
-                          data = [data];
-                        }
-
-                        // Iterasi melalui setiap item dalam data
-                        $.each(data, function(i, item) {
-                          // Membuat baris baru
-                          var row = $('<tr>');
-
-                          // Menambahkan kolom ke baris
-                          $('<td>').text(i + 1).appendTo(row);
-                          $('<td>').text(item.Number).appendTo(row);
-                          $('<td>').text(item.ProductionOrderName).appendTo(row);
-                          $('<td>').text(item.MachineType).appendTo(row);
-                          $('<td>').text(item.Sequence).appendTo(row);
-                          $('<td>').text(item.OperationMode).appendTo(row);
-
-                          $('<td>').text(item.QualityOfBanknote).appendTo(row);
-                          $('<td>').html('<div class="button-items"><button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView(\'' + "/" + item.id + '\')"><i class="fas fa-eye"></i></button></div>').appendTo(row);
-
-                          // Menambahkan baris ke tbody
-                          tbody.append(row);
-                        });
-                      }
                     </script>
 
 
