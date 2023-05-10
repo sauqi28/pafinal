@@ -111,6 +111,48 @@
                         <input class="form-control" type="email" name="email" value="<?= $user['OutputStacker'] ?>" id="email" disabled>
                       </div>
                     </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">OPP</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['OPP'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">OPBP</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['OPBP'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">OPA</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['OPA'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">Report Name</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportName'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">Report Time</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportGenerationTime'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">Start Datetime</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportSectionDataStartDate_1'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">End Datetime</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['ReportSectionDataEndDate_1'] ?>" id="email" disabled>
+                      </div>
+                    </div>
 
 
 
