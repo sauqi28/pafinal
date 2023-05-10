@@ -35,7 +35,7 @@ class Dashboard_model extends CI_Model
   }
   public function total_data()
   {
-    $query = $this->db->query('SELECT COUNT(*) as jumlah from tb_sn');
+    $query = $this->db->query('SELECT tot as jumlah from report_2');
     return $query->row()->jumlah;
   }
 }
