@@ -112,6 +112,37 @@
                       </div>
                     </div>
                     <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Report Section Data Number</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['ReportSectionDataNumber'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="fullname" class="col-sm-2 col-form-label text-end">Report Section Data State</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="text" name="fullname" value="<?= $user['ReportSectionDataState'] ?>" id="fullname" disabled>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="position" class="col-sm-2 col-form-label text-end">IPP Number</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['IPPNumber'] ?>" id="email" disabled>
+                      </div>
+                    </div>
+
+
+
+
+
+                    <!-- END OF CONTENT -->
+
+                </div>
+                <div class="col-lg-6">
+                  <form action="<?= site_url('data_user/create'); ?>" method="post">
+
+
+                    <div class="mb-3 row">
                       <label for="position" class="col-sm-2 col-form-label text-end">Quality</label>
                       <div class="col-sm-10">
                         <input class="form-control" type="email" name="email" value="<?= $user['QualityOfBanknote'] ?>" id="email" disabled>
@@ -173,6 +204,12 @@
                         <input class="form-control" type="email" name="email" value="<?= $user['ReportSectionDataEndDate_1'] ?>" id="email" disabled>
                       </div>
                     </div>
+                    <div class="mb-3 row">
+                      <label for="kategori" class="col-sm-2 col-form-label text-end">FileName</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="email" name="email" value="<?= $user['file_name'] ?>" id="email" disabled>
+                      </div>
+                    </div>
 
 
 
@@ -182,6 +219,7 @@
                     <!-- END OF CONTENT -->
 
                 </div>
+
               </div>
 
             </div>
