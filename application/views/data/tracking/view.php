@@ -61,7 +61,7 @@
               <div class="row">
                 <div class="col-lg-6">
                   <form action="<?= site_url('data_user/create'); ?>" method="post">
-                    <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
+
 
                     <div class="mb-3 row">
                       <label for="nip" class="col-sm-2 col-form-label text-end">NIP</label>
@@ -116,14 +116,6 @@
                         <input class="form-control" type="email" name="email" value="<?= $user['OutputStacker'] ?>" id="email" disabled>
                       </div>
                     </div>
-                    <?php if (!empty($user['vendor_name'])) : ?>
-                      <div class="mb-3 row">
-                        <label for="kategori" class="col-sm-2 col-form-label text-end">Vendor</label>
-                        <div class="col-sm-10">
-                          <input class="form-control" type="email" name="email" value="<?= $user['opp'] ?>" id="email" disabled>
-                        </div>
-                      </div>
-                    <?php endif; ?>
 
 
 
