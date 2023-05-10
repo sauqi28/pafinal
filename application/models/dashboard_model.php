@@ -28,4 +28,9 @@ class Dashboard_model extends CI_Model
     $query = $this->db->query('SELECT COUNT(*) as jumlah from master_machine');
     return $query->row()->jumlah;
   }
+  public function total_po()
+  {
+    $query = $this->db->query('SELECT COUNT(*) as jumlah from tb_file_path');
+    return $query->row()->jumlah;
+  }
 }
