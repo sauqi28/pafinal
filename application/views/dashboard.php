@@ -261,7 +261,7 @@
                       <h4 class="card-title">Data Mesin Tahunan</h4>
                     </div><!--end col-->
                     <div class="col-auto">
-                      <div class="dropdown">
+                      <!-- <div class="dropdown">
                         <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           This Year<i class="las la-angle-down ms-1"></i>
                         </a>
@@ -271,7 +271,7 @@
                           <a class="dropdown-item" href="#">Last Month</a>
                           <a class="dropdown-item" href="#">This Year</a>
                         </div>
-                      </div>
+                      </div> -->
                     </div><!--end col-->
                   </div> <!--end row-->
                 </div><!--end card-header-->
