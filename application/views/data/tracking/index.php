@@ -49,6 +49,36 @@
                         <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
                       </div>
                     </form>
+                    <script src="https://unpkg.com/sweetalert2@10"></script>
+                    <script>
+                      $(document).ready(function() {
+                        $('form').on('submit', function(e) {
+                          e.preventDefault();
+                          Swal.fire({
+                            title: 'Loading...',
+                            allowOutsideClick: false,
+                            onBeforeOpen: () => {
+                              Swal.showLoading()
+                            },
+                          });
+
+                          $.ajax({
+                            type: $(this).attr('method'),
+                            url: $(this).attr('action'),
+                            data: $(this).serialize(),
+                            success: function(data) {
+                              Swal.close();
+                              // proses data atau redirect ke halaman lain
+                            },
+                            error: function(error) {
+                              Swal.close();
+                              // tampilkan pesan error
+                            }
+                          });
+                        });
+                      });
+                    </script>
+
                     <script>
                       function moveCursorToPosition(el, pos) {
                         el.selectionStart = el.selectionEnd = pos;
