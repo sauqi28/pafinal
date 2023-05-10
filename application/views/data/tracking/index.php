@@ -88,6 +88,11 @@
                         // Menghapus baris yang ada
                         tbody.empty();
 
+                        // Cek jika data adalah array, jika bukan, ubah menjadi array
+                        if (!Array.isArray(data)) {
+                          data = [data];
+                        }
+
                         // Iterasi melalui setiap item dalam data
                         $.each(data, function(i, item) {
                           // Membuat baris baru
@@ -102,6 +107,7 @@
                           $('<td>').text(item.OperationMode).appendTo(row);
                           $('<td>').text(item.QualityOfBanknote).appendTo(row);
                           $('<td>').html('<div class="button-items"><button type="button" class="btn btn-xs btn-primary btn-icon-square-sm" onclick="goView(\'' + "/" + item.id + '\')"><i class="fas fa-eye"></i></button></div>').appendTo(row);
+
                           // Menambahkan baris ke tbody
                           tbody.append(row);
                         });
