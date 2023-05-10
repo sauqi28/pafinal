@@ -267,12 +267,12 @@
                         <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           This Year<i class="las la-angle-down ms-1"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end">
+                        <!-- <div class="dropdown-menu dropdown-menu-end">
                           <a class="dropdown-item" href="#">Today</a>
                           <a class="dropdown-item" href="#">Last Week</a>
                           <a class="dropdown-item" href="#">Last Month</a>
                           <a class="dropdown-item" href="#">This Year</a>
-                        </div>
+                        </div> -->
                       </div>
                     </div><!--end col-->
                   </div> <!--end row-->
@@ -286,36 +286,35 @@
                           data: [
                             <?php
                             foreach ($grafik2 as $data) {
-                              echo $data['total_data'] / 1000000 . ',';
+                              echo '{ name: "' . $data['tahun'] . '", value: ' . $data['total_data'] . ' },';
                             }
                             ?>
                           ]
                         }],
                         chart: {
-                          type: 'bar',
-                          height: 380
+                          type: 'pie',
+                          height: 350
                         },
                         plotOptions: {
-                          bar: {
-                            borderRadius: 4,
-                            horizontal: true,
+                          pie: {
+                            donut: {
+                              size: '60%'
+                            }
                           }
                         },
+                        labels: [
+                          <?php
+                          foreach ($grafik2 as $data) {
+                            echo '"' . $data['tahun'] . '",';
+                          }
+                          ?>
+                        ],
+                        legend: {
+                          show: true
+                        },
                         dataLabels: {
-                          enabled: false
-                        },
-                        xaxis: {
-                          categories: [
-                            <?php
-                            foreach ($grafik2 as $data) {
-                              echo '"' . $data['tahun'] . '",';
-                            }
-                            ?>
-                          ],
-                        },
-                        yaxis: {
-                          title: {
-                            text: 'Total Data (in Juta)'
+                          formatter: function(val) {
+                            return val.toFixed(2) + "%";
                           }
                         }
                       };
@@ -323,6 +322,7 @@
                       var chart = new ApexCharts(document.querySelector("#chart2"), options);
                       chart.render();
                     </script>
+
                   </div>
                 </div>
 
