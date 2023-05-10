@@ -17,7 +17,9 @@ class Data_tracking_model extends CI_Model
     $this->db->join('master_machine d', 'c.idmachine = d.IdMachine');
     $this->db->where('a.id', $id);
     $query = $this->db->get();
-    return $query->result_array();
+    $user_additional_info = $query->row_array();
+
+    return $user_additional_info;
   }
 
 
