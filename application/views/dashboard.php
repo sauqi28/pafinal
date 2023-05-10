@@ -193,7 +193,7 @@
 
               </div><!--end card-->
             </div>
-            <div class="col-9">
+            <div class="col-8">
               <div class="card">
                 <div class="card-header">
                   <div class="row align-items-center">
