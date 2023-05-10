@@ -56,23 +56,26 @@
                         $('form').on('submit', function(e) {
                           e.preventDefault();
                           let timerInterval;
+                          let elapsedTime = 0; // Menambahkan variabel elapsedTime
+
                           Swal.fire({
                             title: 'Harap Menunggu...',
-                            html: 'Loading data dalam <b></b> milliseconds.',
-                            timer: 2000, // Waktu loading dalam miliseconds
-                            timerProgressBar: true,
+                            html: 'Loading data selama <b></b> detik.',
                             allowOutsideClick: false,
                             onBeforeOpen: () => {
                               Swal.showLoading();
                               timerInterval = setInterval(() => {
+                                elapsedTime += 100; // Menambahkan 100 milidetik ke elapsedTime
                                 Swal.getContent().querySelector('b')
-                                  .textContent = Swal.getTimerLeft()
+                                  .textContent = (elapsedTime / 1000).toFixed(2); // Menampilkan elapsedTime sebagai detik dengan 2 angka desimal
                               }, 100)
                             },
                             onClose: () => {
                               clearInterval(timerInterval)
                             },
                           });
+
+
 
                           $.ajax({
                             type: "POST",
