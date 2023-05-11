@@ -14,8 +14,8 @@ class Tracking extends CI_Controller
 		$this->load->helper('url_helper');
 		$this->load->library('form_validation');
 		$this->load->library('pagination');
-		$this->title = "Tracking Data Serial Number";
-		$this->subtitle = "halaman untuk melakukan tracking data serial number";
+		$this->title = "Search Data";
+		$this->subtitle = "halaman untuk melakukan Search data";
 
 
 		if (!$this->session->userdata('logged_in')) {
