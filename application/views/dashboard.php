@@ -326,26 +326,27 @@
             </div>
 
           </div>
-
-          <!--end Rightbar/offcanvas-->
-          <!--end Rightbar-->
-
-          <!--Start Footer-->
-          <!-- Footer Start -->
-          <footer class="footer text-center text-sm-start">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script> Unikit <span class="text-muted d-none d-sm-inline-block float-end">By Divisi TI</span>
-          </footer>
-          <!-- end Footer -->
-          <!--end footer-->
         </div>
-        <!-- end page content -->
+
+        <!--end Rightbar/offcanvas-->
+        <!--end Rightbar-->
+
+        <!--Start Footer-->
+        <!-- Footer Start -->
+        <footer class="footer text-center text-sm-start">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script> Unikit <span class="text-muted d-none d-sm-inline-block float-end">By Divisi TI</span>
+        </footer>
+        <!-- end Footer -->
+        <!--end footer-->
       </div>
+      <!-- end page content -->
+    </div>
 
-      <?php $this->load->view('project/element/footer'); ?>
+    <?php $this->load->view('project/element/footer'); ?>
 
-      </body>
+    </body>
 
-      </html>
+    </html>
