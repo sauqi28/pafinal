@@ -64,7 +64,7 @@
                     </div><!--end col-->
                     <div class="col-12 ms-auto align-self-center">
                       <h3 class="text-dark my-0 font-22 fw-bold"><?php echo $total_po; ?></h3>
-                      <p class="text-muted mb-0 fw-semibold">Total Production Order</p>
+                      <p class="text-muted mb-0 fw-semibold">Total Unstructure Files</p>
                     </div><!--end col-->
                   </div><!--end row-->
                 </div><!--end card-body-->
