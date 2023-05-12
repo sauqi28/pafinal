@@ -41,12 +41,12 @@
                                          <li class="nav-item">
                                              <a class="nav-link" href="<?php echo base_url('/dashboard'); ?>">Dashboard</a>
                                          </li><!--end nav-item-->
-                                         <li class="nav-item">
+                                         <!-- <li class="nav-item">
                                              <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">Report</a>
-                                         </li><!--end nav-item-->
+                                         </li>
                                          <li class="nav-item">
                                              <a href="<?php echo base_url('/penerimaan_sap_return'); ?>" class="nav-link ">ETL Status</a>
-                                         </li><!--end nav-item-->
+                                         </li> -->
 
 
                                      </ul><!--end nav-->
@@ -57,7 +57,7 @@
 
 
 
-                             <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>aster</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
+                             <!-- <li class="menu-label mt-0 text-primary font-12 fw-semibold">M<span>aster</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
                              <li class="nav-item">
 
                              <li class="nav-item">
@@ -75,11 +75,11 @@
                                              <a class="nav-link" href="<?php echo base_url('data_customer'); ?>"><span>Mesin</span></a>
                                          </li>
 
-                                     </ul><!--end nav-->
-                                 </div><!--end sidebarProjects-->
-                             </li><!--end nav-item-->
+                                     </ul>
+                                 </div>
+                             </li> -->
 
-                             <li class="nav-item">
+                             <!-- <li class="nav-item">
                                  <a class="nav-link" href="#setting" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects">
                                      <i class="ti ti-brand-asana menu-icon"></i>
                                      <span>Pengaturan</span>
@@ -90,14 +90,14 @@
 
                                          <li class="nav-item">
                                              <a class="nav-link" href="projects-index.html">User Penerimaan</a>
-                                         </li><!--end nav-item-->
+                                         </li>
                                          <li class="nav-item">
                                              <a class="nav-link" href="projects-clients.html">Lainnya</a>
-                                         </li><!--end nav-item-->
+                                         </li>
 
-                                     </ul><!--end nav-->
-                                 </div><!--end sidebarProjects-->
-                             </li><!--end nav-item-->
+                                     </ul>
+                                 </div>
+                             </li> -->
 
                          <?php endif; ?>
                          <li class="menu-label mt-0 text-primary font-12 fw-semibold">P<span>encarian</span><br><span class="font-10 text-secondary fw-normal">Data</span></li>
@@ -109,7 +109,7 @@
                              <div class="collapse " id="sidebarAnalytics">
                                  <ul class="nav flex-column">
                                      <li class="nav-item">
-                                         <a class="nav-link" href="<?php echo base_url('/tracking'); ?>">SN Tracking</a>
+                                         <a class="nav-link" href="<?php echo base_url('/tracking'); ?>">Data</a>
                                      </li><!--end nav-item-->
 
 
